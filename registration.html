@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+
+    <script>
+        function updateAgeValue(value) {
+            document.getElementById('ageValue').textContent = value;
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .para {
+            background-color: red;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .para:hover {
+            background-color: green;
+            cursor: pointer;
+        }
+
+        #idd {
+            background-color: purple;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        #idd:hover {
+            background-color: yellow;
+            color: black;
+            cursor: pointer;
+        }
+
+        #idd1 {
+            background-color: green;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        #idd1:hover {
+            background-color: yellow;
+            color: black;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 9px;
+            background-color: green;
+            border: none;
+            color: white;
+            font-size: 17px;
+            border-radius: 10px;
+        }
+
+        .main_div {
+            display: flex;
+            gap: 10px;
+        }
+
+        .div_p {
+            padding: 40px;
+            width: 400px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div style="background-color: beige; padding: 10px;">
+
+
+
+        <form style="background-color: white; margin: auto; width: 35%; box-shadow: 3px 3px 3px 3px lightslategray;">
+            <div style="padding: 10px;">
+                <h2 style="text-align: center; font-size: 30px;">Registration Form</h2>
+                Name : <br>
+                <input type="text" placeholder="Enter name" style=" padding: 6px; width: 90%; margin: 4px;" />
+
+                </br></br>
+
+                Password : <br />
+                <input type="password" placeholder="Enter password" style=" padding:6px; width: 90%; margin: 4px;" />
+
+                </br></br>
+
+
+                <div class="slider-container">
+                    <!-- <label for="ageSlider" class="slider-label">Select your age:</label> -->
+                    <div class="slider-value">Select Your Age : <span id="ageValue">25</span></div>
+                    <input style="width: 90%; margin: 14px;" type="range" id="ageSlider" name="ageSlider" min="0"
+                        max="100" value="25" oninput="updateAgeValue(this.value)">
+                </div>
+
+                </br>
+
+                Beverage Preference : </br>
+
+                <div style="padding: 10px;">
+                    <input type="checkbox" />Tea
+                    <input type="checkbox" style="margin-left: 40px;" />Coffee
+                </div>
+
+                </br>
+
+                Gender : </br>
+                <div style="padding: 10px;">
+                    <input type="radio" />Male
+                    <input type="radio" style="margin-left: 40px;" /> Female
+
+                </div>
+                </br>
+
+                Meal : </br>
+                <div style="padding: 10px;">
+                    <input type="radio" /> Veg
+                    <input type="radio" style="margin-left: 40px;" /> NonVeg
+
+                </div>
+                </br>
+
+                Payment :<br>
+                <select style="padding: 7px; width: 200px; margin-top: 12px;">
+                    <option>Credit Card</option>
+                    <option>Debit Card</option>
+                </select>
+
+                </br></br>
+
+                Address :<br>
+                <textarea style="margin-top: 10px;" cols="43" rows="5"></textarea>
+
+
+
+                </br></br>
+
+
+                <button
+                    style="color: white; padding: 10px; cursor: pointer; background-color: black; border: none; padding: 12px 30px; border-radius: 5px;">Register</button>
+
+                <button
+                    style="color: white; padding: 10px; cursor: pointer; background-color: black; border: none; padding: 12px 40px; margin-left: 20px; border-radius: 5px;">Reset</button>
+
+            </div>
+        </form>
+
+
+
+        <div style="margin-top: 100px;">
+            <h2 style="font-size: 50px;">Music</h2>
+            <audio controls>
+                <source src="music.mp3">
+            </audio>
+        </div>
+
+        <div style="margin-top: 100px;">
+            <h2 style="font-size: 50px;">Video</h2>
+            <div>
+                <iframe width="380" style="margin-left: 15px;" height="350"
+                    src="https://www.youtube.com/embed/RLmITLBzCKw?si=QzSkTRDKOzcC2Px9" allowfullscreen>
+                </iframe>
+                <iframe width="380" style="margin-left: 15px;" height="350"
+                    src="https://www.youtube.com/embed/RLmITLBzCKw?si=QzSkTRDKOzcC2Px9" allowfullscreen>
+                </iframe>
+
+                <iframe width="380" style="margin-left: 15px;" height="350"
+                    src="https://www.youtube.com/embed/RLmITLBzCKw?si=QzSkTRDKOzcC2Px9" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+
+        <div style="margin-top: 100px; justify-content: center; display: flex;">
+            <img src="html-5_5968267.png" alt="html" style="width: 200px;">
+            <img src="css-3_5968242.png" alt="css" style="width: 200px;">
+        </div>
+
+        <h2 style="font-size: 35px; margin-top: 100px;">Hover Effect</h2>
+        <div class="main_div">
+            <div class="div_p">
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat in corporis asperiores!
+                    Vel
+                    animi eligendi natus illum, accusamus labore possimus. Ducimus sint mollitia velit obcaecati dicta
+                    expedita, impedit eos labore.</p>
+            </div>
+            <div class="div_p">
+                <p id="idd">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium laboriosam facilis
+                    dolore
+                    cumque vitae, sed explicabo illum, dolorum voluptatem reprehenderit non provident asperiores,
+                    impedit
+                    recusandae ratione! Dicta inventore porro consequuntur.</p>
+            </div>
+
+            <div class="div_p">
+                <p id="idd1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium laboriosam facilis
+                    dolore
+                    cumque vitae, sed explicabo illum, dolorum voluptatem reprehenderit non provident asperiores,
+                    impedit
+                    recusandae ratione! Dicta inventore porro consequuntur.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
