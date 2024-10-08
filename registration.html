@@ -10,6 +10,10 @@
         function updateAgeValue(value) {
             document.getElementById('ageValue').textContent = value;
         }
+
+        function btn(){
+            confirm("want to submit Form");
+        }
     </script>
     <style>
         * {
@@ -148,10 +152,10 @@
                 </br></br>
 
 
-                <button
+                <button onclick="alert('form submitted')"
                     style="color: white; padding: 10px; cursor: pointer; background-color: black; border: none; padding: 12px 30px; border-radius: 5px;">Register</button>
 
-                <button
+                <button onclick="btn()"
                     style="color: white; padding: 10px; cursor: pointer; background-color: black; border: none; padding: 12px 40px; margin-left: 20px; border-radius: 5px;">Reset</button>
 
             </div>
