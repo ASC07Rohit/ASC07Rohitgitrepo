@@ -11,8 +11,19 @@
             document.getElementById('ageValue').textContent = value;
         }
 
-        function btn(){
-            confirm("Want to Reset Your Form");
+        function submitForm(event) {
+            event.preventDefault();
+
+            const form = event.target;
+
+            if (form.checkValidity()) {
+                alert("Form Submitted Successfully");
+            } else {
+                alert("please fill out all req fields.");
+            }
+        }
+        function resetForm(form) {
+            form.reset();
         }
     </script>
     <style>
@@ -85,81 +96,84 @@
 
 <body>
     <div style="background-color: beige; padding: 10px;">
-
-
-
-        <form style="background-color: white; margin: auto; width: 35%; box-shadow: 3px 3px 3px 3px lightslategray;">
-            <div style="padding: 10px;">
-                <h2 style="text-align: center; font-size: 30px;">Registration Form</h2>
-                Name : <br>
-                <input type="text" placeholder="Enter name" style=" padding: 6px; width: 90%; margin: 4px;" />
-
-                </br></br>
-
-                Password : <br />
-                <input type="password" placeholder="Enter password" style=" padding:6px; width: 90%; margin: 4px;" />
-
-                </br></br>
-
-
-                <div class="slider-container">
-                    <!-- <label for="ageSlider" class="slider-label">Select your age:</label> -->
-                    <div class="slider-value">Select Your Age : <span id="ageValue">25</span></div>
-                    <input style="width: 90%; margin: 14px;" type="range" id="ageSlider" name="ageSlider" min="0"
-                        max="100" value="25" oninput="updateAgeValue(this.value)">
-                </div>
-
-                </br>
-
-                Beverage Preference : </br>
-
+        <div>
+            <form onsubmit="submitForm(event);"
+                style="background-color: white; margin: auto; width: 35%; box-shadow: 1px 1px 1px 1px lightslategray;">
                 <div style="padding: 10px;">
-                    <input type="checkbox" />Tea
-                    <input type="checkbox" style="margin-left: 40px;" />Coffee
+                    <h2 style="text-align: center; font-size: 30px; padding: 20px 0px;">Registration Form</h2>
+                    Name : <br>
+                    <input type="text" writingsuggestions="true" placeholder="Enter name"
+                        style=" padding: 6px; width: 90%; margin: 4px;" required />
+
+                    </br></br>
+
+                    Password : <br />
+                    <input type="password" writingsuggestions="true" placeholder="Enter password"
+                        style=" padding:6px; width: 90%; margin: 4px;" required />
+
+                    </br></br>
+
+
+                    <div class="slider-container">
+                        <!-- <label for="ageSlider" class="slider-label">Select your age:</label> -->
+                        <div class="slider-value">Select Your Age : <span id="ageValue">25</span></div>
+                        <input writingsuggestions="true" style="width: 90%; margin: 14px;" type="range" id="ageSlider"
+                            name="ageSlider" min="0" max="100" value="25" oninput="updateAgeValue(this.value)">
+                    </div>
+
+                    </br>
+
+                    Beverage Preference : </br>
+
+                    <div style="padding: 10px;">
+                        <input type="checkbox" name="beverage" writingsuggestions="true" />Tea
+                        <input type="checkbox" name="beverage" writingsuggestions="true"
+                            style="margin-left: 40px;" />Coffee
+                    </div>
+
+                    </br>
+
+                    Gender : </br>
+                    <div style="padding: 10px;">
+                        <input type="radio" name="gender" writingsuggestions="true" required />Male
+                        <input type="radio" name="gender" writingsuggestions="true" style="margin-left: 40px;" /> Female
+
+                    </div>
+                    </br>
+
+                    Meal : </br>
+                    <div style="padding: 10px;">
+                        <input type="radio" name="meal" writingsuggestions="true" required /> Veg
+                        <input type="radio" name="meal" writingsuggestions="true" style="margin-left: 40px;" /> NonVeg
+
+                    </div>
+                    </br>
+
+                    Payment :<br>
+                    <select style="padding: 7px; width: 200px; margin-top: 12px;">
+                        <option>Credit Card</option>
+                        <option>Debit Card</option>
+                    </select>
+
+                    </br></br>
+
+                    Address :<br>
+                    <textarea style="margin-top: 10px;" cols="43" rows="5" required></textarea>
+
+
+
+                    </br></br>
+
+
+                    <button type="submit"
+                        style="color: white; padding: 10px; cursor: pointer; background-color: black; border: none; padding: 12px 30px; border-radius: 5px;">Register</button>
+
+                    <button onclick="resetForm(this.form)" type="button"
+                        style="color: white; padding: 10px; cursor: pointer; background-color: black; border: none; padding: 12px 40px; margin-left: 20px; border-radius: 5px;">Reset</button>
+
                 </div>
-
-                </br>
-
-                Gender : </br>
-                <div style="padding: 10px;">
-                    <input type="radio" />Male
-                    <input type="radio" style="margin-left: 40px;" /> Female
-
-                </div>
-                </br>
-
-                Meal : </br>
-                <div style="padding: 10px;">
-                    <input type="radio" /> Veg
-                    <input type="radio" style="margin-left: 40px;" /> NonVeg
-
-                </div>
-                </br>
-
-                Payment :<br>
-                <select style="padding: 7px; width: 200px; margin-top: 12px;">
-                    <option>Credit Card</option>
-                    <option>Debit Card</option>
-                </select>
-
-                </br></br>
-
-                Address :<br>
-                <textarea style="margin-top: 10px;" cols="43" rows="5"></textarea>
-
-
-
-                </br></br>
-
-
-                <button onclick="alert('Form Submitted Successfully')"
-                    style="color: white; padding: 10px; cursor: pointer; background-color: black; border: none; padding: 12px 30px; border-radius: 5px;">Register</button>
-
-                <button onclick="btn()"
-                    style="color: white; padding: 10px; cursor: pointer; background-color: black; border: none; padding: 12px 40px; margin-left: 20px; border-radius: 5px;">Reset</button>
-
-            </div>
-        </form>
+            </form>
+        </div>>
 
 
 
