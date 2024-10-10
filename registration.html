@@ -32,6 +32,46 @@
             padding: 0;
         }
 
+        .header_div {
+            display: flex;
+            padding: 20px;
+            /* background-color: rgb(184, 178, 178); */
+            background-color: rgb(49, 47, 47);
+            color: white;
+            justify-content: space-evenly;
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+        }
+
+        .div_1 {
+            background-color: white;
+            color: black;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        .div_2 {
+            li {
+                list-style-type: none;
+                padding-left: 40px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+            ul {
+                display: flex;
+            }
+        }
+
+        .div_2 li:hover {
+            transform: scale(1.1);
+            transition: transform .4s;
+        }
+
+
 
         .para {
             background-color: red;
@@ -83,11 +123,34 @@
         .main_div {
             display: flex;
             gap: 10px;
+            padding-bottom: 40px;
         }
 
         .div_p {
-            padding: 40px;
+            padding: 20px;
             width: 400px;
+        }
+
+        .footer {
+            background-color: rgb(49, 47, 47);
+            color: white;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 75px;
+
+
+        }
+
+        .footer_div1 {
+            width: 320px;
+            margin: 8px;
+        }
+
+        .footer_div2,
+        .footer_div3,
+        li {
+            list-style-type: none;
+            margin: 8px;
         }
     </style>
 
@@ -95,19 +158,38 @@
 
 
 <body>
-    <div style="background-color: beige; padding: 10px;">
-        <div>
+    <div style="background-color: beige;">
+
+        <header class="header_div">
+            <div class="div_1">
+                <h3>RS</h2>
+            </div>
+            <div class="div_2">
+                <ul>
+                    <li>Home</li>
+                    <li>About us</li>
+                    <li>Video</li>
+                    <li>Hover</li>
+                    <li>Contact us</li>
+                </ul>
+            </div>
+        </header>
+
+        <div
+            style="padding: 50px; background-image: url(bg_img.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
             <form onsubmit="submitForm(event);"
-                style="background-color: white; margin: auto; width: 35%; box-shadow: 1px 1px 1px 1px lightslategray;">
+                style="background-color: rgba(255, 255, 255,0.9); margin: auto; width: 40%; border-radius: 10px;">
                 <div style="padding: 10px;">
-                    <h2 style="text-align: center; font-size: 30px; padding: 20px 0px;">Registration Form</h2>
-                    Name : <br>
+                    <h2
+                        style="text-align: center; font-size: 35px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; padding-top: 20px; padding-bottom: 40px; ">
+                        Registration Form</h2>
+                    <label style="font-weight: 600;">Name</label> : <br>
                     <input type="text" writingsuggestions="true" placeholder="Enter name"
                         style=" padding: 6px; width: 90%; margin: 4px;" required />
 
                     </br></br>
 
-                    Password : <br />
+                    <label style="font-weight: 600;">Password</label> : <br />
                     <input type="password" writingsuggestions="true" placeholder="Enter password"
                         style=" padding:6px; width: 90%; margin: 4px;" required />
 
@@ -116,32 +198,36 @@
 
                     <div class="slider-container">
                         <!-- <label for="ageSlider" class="slider-label">Select your age:</label> -->
-                        <div class="slider-value">Select Your Age : <span id="ageValue">25</span></div>
+                        <div class="slider-value" style="font-weight: 600;">Select Your Age : <span
+                                id="ageValue">25</span></div>
                         <input writingsuggestions="true" style="width: 90%; margin: 14px;" type="range" id="ageSlider"
                             name="ageSlider" min="0" max="100" value="25" oninput="updateAgeValue(this.value)">
                     </div>
 
                     </br>
-
-                    Beverage Preference : </br>
+                    <label style="font-weight: 600;">Beverage Preference </label>:
+                    </br>
 
                     <div style="padding: 10px;">
-                        <input type="checkbox" name="beverage" writingsuggestions="true" />Tea
+                        <input type="checkbox" name="beverage" writingsuggestions="true" /><label
+                            style="margin-left: 4px;">Tea</label>
                         <input type="checkbox" name="beverage" writingsuggestions="true"
-                            style="margin-left: 40px;" />Coffee
+                            style="margin-left: 40px;" /><label style="margin-left: 4px;">Coffee</label>
                     </div>
 
                     </br>
 
-                    Gender : </br>
+                    <label style="font-weight: 600;">Gender </label> : </br>
                     <div style="padding: 10px;">
-                        <input type="radio" name="gender" writingsuggestions="true" required />Male
-                        <input type="radio" name="gender" writingsuggestions="true" style="margin-left: 40px;" /> Female
+                        <input type="radio" name="gender" writingsuggestions="true" required /><label
+                            style="margin-left: 4px;">Male</label>
+                        <input type="radio" name="gender" writingsuggestions="true" style="margin-left: 40px;" /> <label
+                            style="margin-left: 2px;">Female</label>
 
                     </div>
                     </br>
 
-                    Meal : </br>
+                    <label style="font-weight: 600;">Meal </label> : </br>
                     <div style="padding: 10px;">
                         <input type="radio" name="meal" writingsuggestions="true" required /> Veg
                         <input type="radio" name="meal" writingsuggestions="true" style="margin-left: 40px;" /> NonVeg
@@ -149,7 +235,7 @@
                     </div>
                     </br>
 
-                    Payment :<br>
+                    <label style="font-weight: 600;">Payment </label> :<br>
                     <select style="padding: 7px; width: 200px; margin-top: 12px;">
                         <option>Credit Card</option>
                         <option>Debit Card</option>
@@ -157,7 +243,7 @@
 
                     </br></br>
 
-                    Address :<br>
+                    <label style="font-weight: 600;">Address</label> :<br>
                     <textarea style="margin-top: 10px;" cols="43" rows="5" required></textarea>
 
 
@@ -173,40 +259,49 @@
 
                 </div>
             </form>
-        </div>>
+        </div>
 
 
 
-        <div style="margin-top: 100px;">
-            <h2 style="font-size: 50px;">Music</h2>
+        <div
+            style="margin-top: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <h2
+                style="font-size: 30px; margin: 10px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Music</h2>
             <audio controls>
                 <source src="music.mp3">
             </audio>
         </div>
 
         <div style="margin-top: 100px;">
-            <h2 style="font-size: 50px;">Video</h2>
+            <h2
+                style="font-size: 30px; text-align: center; margin-bottom: 20px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Video </h2>
             <div>
+
                 <iframe width="380" style="margin-left: 15px;" height="350"
-                    src="https://www.youtube.com/embed/RLmITLBzCKw?si=QzSkTRDKOzcC2Px9" allowfullscreen>
-                </iframe>
-                <iframe width="380" style="margin-left: 15px;" height="350"
-                    src="https://www.youtube.com/embed/RLmITLBzCKw?si=QzSkTRDKOzcC2Px9" allowfullscreen>
+                    src="https://www.youtube.com/embed/CrwrljPQaYA?si=RxO8yJeWycMmSar4" allowfullscreen>
                 </iframe>
 
                 <iframe width="380" style="margin-left: 15px;" height="350"
-                    src="https://www.youtube.com/embed/RLmITLBzCKw?si=QzSkTRDKOzcC2Px9" allowfullscreen>
+                    src="https://www.youtube.com/embed/JTxsNm9IdYU?si=wf_HK2XapYAhiMuf" allowfullscreen>
+                </iframe>
+
+                <iframe width="380" style="margin-left: 15px;" height="350"
+                    src="https://www.youtube.com/embed/q4YITgPzkVA?si=NvlOb98UzO6RPF9A" allowfullscreen>
                 </iframe>
             </div>
         </div>
 
 
         <div style="margin-top: 100px; justify-content: center; display: flex;">
-            <img src="html-5_5968267.png" alt="html" style="width: 200px;">
-            <img src="css-3_5968242.png" alt="css" style="width: 200px;">
+            <img src="html-5_5968267.png" alt="html" style="width: 170px;">
+            <img src="css-3_5968242.png" alt="css" style="width: 170px;">
         </div>
 
-        <h2 style="font-size: 35px; margin-top: 100px;">Hover Effect</h2>
+        <h2
+            style="font-size: 30px; margin-top: 100px; text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            Hover Effect</h2>
         <div class="main_div">
             <div class="div_p">
                 <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat in corporis asperiores!
@@ -230,10 +325,40 @@
                     recusandae ratione! Dicta inventore porro consequuntur.</p>
             </div>
         </div>
-
     </div>
 
 
+    <footer class="footer">
+
+        <div class="footer_div1">
+
+            <h3>RS</h2>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptate veniam eaque perferendis
+                    assumenda impedit! Odit doloribus quia voluptatibus. Eos iusto esse asperiores porro recusandae
+                    necessitatibus quo ducimus eligendi laboriosam.</p>
+        </div>
+
+        <div class="footer_div2">
+            <ul>
+                <li>Home</li>
+                <li>News</li>
+                <li>About</li>
+                <li>Contact us</li>
+                <li>Privacy</li>
+            </ul>
+        </div>
+
+        <div class="footer_div3">
+            <ul>
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>Linkdlin</li>
+                <li>You Tube</li>
+            </ul>
+        </div>
+
+    </footer>
 </body>
 
 </html>
