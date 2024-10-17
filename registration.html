@@ -6,153 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Forms</title>
 
-    <script>
-        function updateAgeValue(value) {
-            document.getElementById('ageValue').textContent = value;
-        }
-
-        function submitForm(event) {
-            event.preventDefault();
-
-            const form = event.target;
-
-            if (form.checkValidity()) {
-                alert("Form Submitted Successfully");
-            } else {
-                alert("please fill out all req fields.");
-            }
-        }
-        function resetForm(form) {
-            form.reset();
-        }
-    </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .header_div {
-            display: flex;
-            padding: 20px;
-            /* background-color: rgb(184, 178, 178); */
-            background-color: rgb(49, 47, 47);
-            color: white;
-            justify-content: space-evenly;
-            position: sticky;
-            top: 0;
-            overflow: hidden;
-        }
-
-        .div_1 {
-            background-color: white;
-            color: black;
-            border-radius: 50%;
-            padding: 5px;
-        }
-
-        .div_2 {
-            li {
-                list-style-type: none;
-                padding-left: 40px;
-                font-size: 16px;
-                font-weight: 600;
-                cursor: pointer;
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            }
-
-            ul {
-                display: flex;
-            }
-        }
-
-        .div_2 li:hover {
-            transform: scale(1.1);
-            transition: transform .4s;
-        }
-
-
-
-        .para {
-            background-color: red;
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-        }
-
-        .para:hover {
-            background-color: green;
-            cursor: pointer;
-        }
-
-        #idd {
-            background-color: purple;
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-        }
-
-        #idd:hover {
-            background-color: yellow;
-            color: black;
-            cursor: pointer;
-        }
-
-        #idd1 {
-            background-color: green;
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-        }
-
-        #idd1:hover {
-            background-color: yellow;
-            color: black;
-            cursor: pointer;
-        }
-
-        button {
-            padding: 9px;
-            background-color: green;
-            border: none;
-            color: white;
-            font-size: 17px;
-            border-radius: 10px;
-        }
-
-        .main_div {
-            display: flex;
-            gap: 10px;
-            padding-bottom: 40px;
-        }
-
-        .div_p {
-            padding: 20px;
-            width: 400px;
-        }
-
-        .footer {
-            background-color: rgb(49, 47, 47);
-            color: white;
-            display: flex;
-            justify-content: space-evenly;
-            padding: 75px;
-
-
-        }
-
-        .footer_div1 {
-            width: 320px;
-            margin: 8px;
-        }
-
-        .footer_div2,
-        .footer_div3,
-        li {
-            list-style-type: none;
-            margin: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -167,6 +21,7 @@
             <div class="div_2">
                 <ul>
                     <li>Home</li>
+                    <li>Dashboard</li>
                     <li>About us</li>
                     <li>Video</li>
                     <li>Hover</li>
@@ -175,32 +30,33 @@
             </div>
         </header>
 
+
+
         <div
             style="padding: 50px; background-image: url(bg_img.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
-            <form onsubmit="submitForm(event);"
+            <form id="reg-form"
                 style="background-color: rgba(255, 255, 255,0.9); margin: auto; width: 40%; border-radius: 10px;">
                 <div style="padding: 10px;">
                     <h2
                         style="text-align: center; font-size: 35px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; padding-top: 20px; padding-bottom: 40px; ">
                         Registration Form</h2>
                     <label style="font-weight: 600;">Name</label> : <br>
-                    <input type="text" writingsuggestions="true" placeholder="Enter name"
+                    <input type="text" id="name" writingsuggestions="true" placeholder="Enter name"
                         style=" padding: 6px; width: 90%; margin: 4px;" required />
 
                     </br></br>
 
                     <label style="font-weight: 600;">Password</label> : <br />
-                    <input type="password" writingsuggestions="true" placeholder="Enter password"
+                    <input type="password" id="password" writingsuggestions="true" placeholder="Enter password"
                         style=" padding:6px; width: 90%; margin: 4px;" required />
 
                     </br></br>
 
 
                     <div class="slider-container">
-                        <!-- <label for="ageSlider" class="slider-label">Select your age:</label> -->
                         <div class="slider-value" style="font-weight: 600;">Select Your Age : <span
                                 id="ageValue">25</span></div>
-                        <input writingsuggestions="true" style="width: 90%; margin: 14px;" type="range" id="ageSlider"
+                        <input writingsuggestions="true" style="width: 90%; margin: 14px;" type="range" id="ageslider"
                             name="ageSlider" min="0" max="100" value="25" oninput="updateAgeValue(this.value)">
                     </div>
 
@@ -209,9 +65,9 @@
                     </br>
 
                     <div style="padding: 10px;">
-                        <input type="checkbox" name="beverage" writingsuggestions="true" /><label
+                        <input id="tea" type="checkbox" name="beverage" writingsuggestions="true" /><label
                             style="margin-left: 4px;">Tea</label>
-                        <input type="checkbox" name="beverage" writingsuggestions="true"
+                        <input id="coffee" type="checkbox" name="beverage" writingsuggestions="true"
                             style="margin-left: 40px;" /><label style="margin-left: 4px;">Coffee</label>
                     </div>
 
@@ -219,24 +75,25 @@
 
                     <label style="font-weight: 600;">Gender </label> : </br>
                     <div style="padding: 10px;">
-                        <input type="radio" name="gender" writingsuggestions="true" required /><label
+                        <input type="radio" id="male" name="gender" writingsuggestions="true" required /><label
                             style="margin-left: 4px;">Male</label>
-                        <input type="radio" name="gender" writingsuggestions="true" style="margin-left: 40px;" /> <label
-                            style="margin-left: 2px;">Female</label>
+                        <input type="radio" id="female" name="gender" writingsuggestions="true"
+                            style="margin-left: 40px;" /> <label style="margin-left: 2px;">Female</label>
 
                     </div>
                     </br>
 
                     <label style="font-weight: 600;">Meal </label> : </br>
                     <div style="padding: 10px;">
-                        <input type="radio" name="meal" writingsuggestions="true" required /> Veg
-                        <input type="radio" name="meal" writingsuggestions="true" style="margin-left: 40px;" /> NonVeg
+                        <input type="radio" id="veg" name="meal" writingsuggestions="true" required /> Veg
+                        <input type="radio" id="nonveg" name="meal" writingsuggestions="true"
+                            style="margin-left: 40px;" /> NonVeg
 
                     </div>
                     </br>
 
                     <label style="font-weight: 600;">Payment </label> :<br>
-                    <select style="padding: 7px; width: 200px; margin-top: 12px;">
+                    <select id="payment" style="padding: 7px; width: 200px; margin-top: 12px;">
                         <option>Credit Card</option>
                         <option>Debit Card</option>
                     </select>
@@ -244,7 +101,7 @@
                     </br></br>
 
                     <label style="font-weight: 600;">Address</label> :<br>
-                    <textarea style="margin-top: 10px;" cols="43" rows="5" required></textarea>
+                    <textarea id="address" style="margin-top: 10px;" cols="43" rows="5" required></textarea>
 
 
 
@@ -261,6 +118,43 @@
             </form>
         </div>
 
+        <div id="dataDisplay" class="dashboard">
+            <h3 style="text-align: center; font-size: 30px;">Dynamic Dashboard</h3>
+            <table id="dynamicDisplayTable">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td id="displayName"></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td id="displayPassword"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="dashboard">
+            <h2 style="text-align: center; font-size: 30px;">Static Dashboard</h2>
+            <table id="dataTable" border="1">
+
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody id="storedData"></tbody>
+
+            </table>
+        </div>
 
 
         <div
@@ -359,6 +253,9 @@
         </div>
 
     </footer>
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
