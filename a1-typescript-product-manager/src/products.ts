@@ -16,7 +16,3 @@ export interface Product{
 
 // releaseDate: string; releaseDate: string; releaseDate: string; releaseDate: string;
 // releaseDate: string; releaseDate: string; releaseDate: string; releaseDate: string;
-// releaseDate: string; releaseDate: string; releaseDate: string; releaseDate: string;
-// releaseDate: string; releaseDate: string; releaseDate: string; releaseDate: string;
-// releaseDate: string; releaseDate: string; releaseDate: string; releaseDate: string;
-// releaseDate: string; releaseDate: string; releaseDate: string; releaseDate: string;
