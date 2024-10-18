@@ -13,3 +13,5 @@ export interface Product{
     // The releaseDate property is mandated
     releaseDate: string;
 }
+
+// releaseDate: string; releaseDate: string; releaseDate: string; releaseDate: string;
