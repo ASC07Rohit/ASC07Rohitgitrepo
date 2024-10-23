@@ -1,0 +1,38 @@
+[
+  {
+    "id": 100,
+    "name": "vivo y11",
+    "category": "smartphone",
+    "brand": "vivo",
+    "price": 20000,
+    "rating": 4,
+    "reviewsCount": 321
+  },
+  {
+    "id": 101,
+    "name": "Samsung M21",
+    "category": "smartphone",
+    "brand": "samsung",
+    "price": 25000,
+    "rating": 453,
+    "reviewsCount": 900
+  },
+  {
+    "id": 102,
+    "name": "sony mdr headphone",
+    "category": "headphone",
+    "brand": "sony",
+    "price": 2000,
+    "rating": 3,
+    "reviewsCount": 22
+  },
+  {
+    "id": 104,
+    "name": "crompton fan",
+    "category": "fan",
+    "brand": "havells",
+    "price": 23000,
+    "rating": 3,
+    "reviewsCount": 44
+  }
+]
