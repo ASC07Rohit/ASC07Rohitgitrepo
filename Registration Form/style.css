@@ -1,154 +1,153 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(./image/bg_img.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+h1:hover {
+  cursor: pointer;
 }
 
 .header_div {
-    display: flex;
-    padding: 20px;
-    /* background-color: rgb(184, 178, 178); */
-    background-color: rgb(49, 47, 47);
-    color: white;
-    justify-content: space-evenly;
-    position: sticky;
-    top: 0;
-    overflow: hidden;
+  display: flex;
+  padding: 20px;
+  background-color: rgb(49, 47, 47);
+  color: white;
+  justify-content: space-evenly;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
 }
 
 .div_1 {
-    background-color: white;
-    color: black;
-    border-radius: 50%;
-    padding: 5px;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .div_2 {
-    li {
-        list-style-type: none;
-        padding-left: 40px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
+  li {
+    list-style-type: none;
+    padding-left: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
 
-    ul {
-        display: flex;
-    }
+  ul {
+    display: flex;
+  }
 }
 
 .div_2 li:hover {
-    transform: scale(1.1);
-    transition: transform .4s;
+  transform: scale(1.1);
+  transition: transform 0.4s;
 }
 
-
-
 .para {
-    background-color: red;
-    color: white;
-    padding: 30px;
-    border-radius: 10px;
+  background-color: red;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
 }
 
 .para:hover {
-    background-color: green;
-    cursor: pointer;
+  background-color: green;
+  cursor: pointer;
 }
 
 #idd {
-    background-color: purple;
-    color: white;
-    padding: 30px;
-    border-radius: 10px;
+  background-color: purple;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
 }
 
 #idd:hover {
-    background-color: yellow;
-    color: black;
-    cursor: pointer;
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
 }
 
 #idd1 {
-    background-color: green;
-    color: white;
-    padding: 30px;
-    border-radius: 10px;
+  background-color: green;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
 }
 
 #idd1:hover {
-    background-color: yellow;
-    color: black;
-    cursor: pointer;
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
 }
 
 button {
-    padding: 9px;
-    background-color: green;
-    border: none;
-    color: white;
-    font-size: 17px;
-    border-radius: 10px;
+  padding: 9px;
+  background-color: green;
+  border: none;
+  color: white;
+  font-size: 17px;
+  border-radius: 10px;
 }
 
 .main_div {
-    display: flex;
-    gap: 10px;
-    padding-bottom: 40px;
+  display: flex;
+  gap: 10px;
+  margin: 0 80px;
 }
 
 .div_p {
-    padding: 20px;
-    width: 400px;
+  padding: 20px;
 }
 
 .footer {
-    background-color: rgb(49, 47, 47);
-    color: white;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 75px;
-
-
+  background-color: rgb(49, 47, 47);
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 75px;
 }
 
 .footer_div1 {
-    width: 320px;
-    margin: 8px;
+  width: 320px;
+  margin: 8px;
 }
 
 .footer_div2,
 .footer_div3,
 li {
-    list-style-type: none;
-    margin: 8px;
+  list-style-type: none;
+  margin: 8px;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
-th, td {
-    border: 1px solid #aea9a9;
-    padding: 8px;
-    text-align: left;
+th,
+td {
+  border: 1px solid #aea9a9;
+  padding: 8px;
+  text-align: left;
 }
 th {
-    background-color: #f2f2f2;
+  background-color: black;
+  color: white;
+  padding: 12px;
 }
 
-
-/* Dynamic Dashboard */
-
-/* style="padding: 20px; border: 2px solid red; background-color: rgba(255, 255, 255, 0.8); margin: auto; width: 80%; border-radius: 10px; margin-top: 30px;" */
-
-.dashboard{
-    /* border: 2px solid red; */
-    padding: 20px;
-    background-color: rgb(241, 231, 231);
-    margin: auto;
-    width: 80%;
-    margin-top: 30px;
-    border-radius: 10px;
+.dashboard {
+  padding: 20px;
+  background-color: rgb(241, 231, 231);
+  margin: auto;
+  width: 55%;
+  margin-top: 30px;
+  border-radius: 10px;
 }

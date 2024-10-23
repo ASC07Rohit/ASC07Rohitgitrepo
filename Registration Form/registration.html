@@ -12,7 +12,7 @@
 
 
 <body>
-    <div style="background-color: beige;">
+    <div>
 
         <header class="header_div">
             <div class="div_1">
@@ -32,10 +32,9 @@
 
 
 
-        <div
-            style="padding: 50px; background-image: url(bg_img.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
+        <div style="padding: 50px;">
             <form id="reg-form"
-                style="background-color: rgba(255, 255, 255,0.9); margin: auto; width: 40%; border-radius: 10px;">
+                style="background-color: rgba(255, 255, 255,0.9); margin: auto; width: 45%; border-radius: 10px; padding: 10px;">
                 <div style="padding: 10px;">
                     <h2
                         style="text-align: center; font-size: 35px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; padding-top: 20px; padding-bottom: 40px; ">
@@ -118,84 +117,107 @@
             </form>
         </div>
 
-        <div id="dataDisplay" class="dashboard">
-            <h3 style="text-align: center; font-size: 30px;">Dynamic Dashboard</h3>
-            <table id="dynamicDisplayTable">
-                <thead>
-                    <tr>
-                        <th>Field</th>
-                        <th>value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Name</td>
-                        <td id="displayName"></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td id="displayPassword"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <div style="margin-top: 60px;">
 
-        <div class="dashboard">
-            <h2 style="text-align: center; font-size: 30px;">Static Dashboard</h2>
-            <table id="dataTable" border="1">
-
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Password</th>
-                    </tr>
-                </thead>
-                <tbody id="storedData"></tbody>
-
-            </table>
-        </div>
-
-
-        <div
-            style="margin-top: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <h2
-                style="font-size: 30px; margin: 10px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                Music</h2>
-            <audio controls>
-                <source src="music.mp3">
-            </audio>
-        </div>
-
-        <div style="margin-top: 100px;">
-            <h2
-                style="font-size: 30px; text-align: center; margin-bottom: 20px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                Video </h2>
             <div>
+                <div id="dataDisplay" class="dashboard">
+                    <h3
+                        style="text-align: center; font-size: 35px; padding: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        Dynamic Dashboard</h3>
+                    <table id="dynamicDisplayTable">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td id="displayName"></td>
+                            </tr>
+                            <tr>
+                                <td>Password</td>
+                                <td id="displayPassword"></td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td id="displayGender"></td>
+                            </tr>
+                            <tr>
+                                <td>Payment</td>
+                                <td id="displayPayment"></td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td id="displayAddress"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                <iframe width="380" style="margin-left: 15px;" height="350"
-                    src="https://www.youtube.com/embed/CrwrljPQaYA?si=RxO8yJeWycMmSar4" allowfullscreen>
-                </iframe>
+                <div class="dashboard" style="margin-top:60px;">
+                    <h2
+                        style="text-align: center; font-size: 35px; padding: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                        Static Dashboard</h2>
+                    <table id="dataTable" border="1">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Password</th>
+                                <th>Gender</th>
+                                <th>Payment</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody id="storedData"></tbody>
 
-                <iframe width="380" style="margin-left: 15px;" height="350"
-                    src="https://www.youtube.com/embed/JTxsNm9IdYU?si=wf_HK2XapYAhiMuf" allowfullscreen>
-                </iframe>
+                    </table>
+                </div>
+            </div>>
 
-                <iframe width="380" style="margin-left: 15px;" height="350"
-                    src="https://www.youtube.com/embed/q4YITgPzkVA?si=NvlOb98UzO6RPF9A" allowfullscreen>
-                </iframe>
+
+            <div
+                style="margin-top: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <h1
+                    style="font-size: 35px;text-decoration: underline; margin: 10px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: white;">
+                    Music</h1>
+                <audio controls>
+                    <source src="music.mp3">
+                </audio>
             </div>
+
+            <div style="margin-top: 100px;">
+                <h1
+                    style="text-decoration: underline; font-size: 30px; text-align: center; margin-bottom: 20px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: white; font-size: 35px;">
+                    Video </h1>
+                <div style="display: flex; justify-content: center;">
+
+                    <iframe width="330" style="margin-left: 15px;" height="350"
+                        src="https://www.youtube.com/embed/CrwrljPQaYA?si=RxO8yJeWycMmSar4" allowfullscreen>
+                    </iframe>
+
+                    <iframe width="330" style="margin-left: 15px;" height="350"
+                        src="https://www.youtube.com/embed/JTxsNm9IdYU?si=wf_HK2XapYAhiMuf" allowfullscreen>
+                    </iframe>
+
+                    <iframe width="330" style="margin-left: 15px;" height="350"
+                        src="https://www.youtube.com/embed/q4YITgPzkVA?si=NvlOb98UzO6RPF9A" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
         </div>
 
+        <!-- <div style="margin-top: 100px; justify-content: center; display: flex;">
+            <img src="image/html-5_5968267.png" alt="html" style="width: 170px;">
+            <img src="image/css-3_5968242.png" alt="css" style="width: 170px;">
+        </div> -->
 
-        <div style="margin-top: 100px; justify-content: center; display: flex;">
-            <img src="html-5_5968267.png" alt="html" style="width: 170px;">
-            <img src="css-3_5968242.png" alt="css" style="width: 170px;">
-        </div>
-
-        <h2
-            style="font-size: 30px; margin-top: 100px; text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-            Hover Effect</h2>
+        <h1
+            style="font-size: 35px; text-decoration: underline; margin-top: 100px; text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: white;">
+            Hover Effect</h1>
         <div class="main_div">
             <div class="div_p">
                 <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat in corporis asperiores!
