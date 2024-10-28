@@ -49,9 +49,14 @@ Feel free to contribute or provide suggestions for improvement!
 ## My Contribution
 ## Feedback
 
-## pending/completed
-- all completed
 
-:heart_eyes:
-:+1:
-:earth_asia: 
+
+# week 3:
+## Challenges and Solution
+## Code base
+## Scope of Improvement
+## Strength
+## Looking Forward
+
+
+
