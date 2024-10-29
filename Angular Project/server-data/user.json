@@ -1,52 +1,23 @@
 {
   "users": [
     {
-      "name": "Rohit",
-      "age": 28,
-      "salary": 50000,
-      "id": "3fb9"
+      "id": "5deb",
+      "fname": "Rohit",
+      "lname": "Selokar",
+      "age": 221,
+      "salary": 2222211,
+      "city": "11",
+      "pin": 2111
     },
     {
-      "name": "Gaurav",
-      "age": 32,
-      "salary": 60000,
-      "id": "fd20"
-    },
-    {
-      "id": "3e54",
-      "name": "Rohit Selokar",
-      "age": 22,
-      "salary": 12
-    },
-    {
-      "id": "6881",
-      "name": "yash",
-      "age": 22,
-      "salary": 200
-    },
-    {
-      "id": "a233",
-      "name": "swarneem",
-      "age": 33,
-      "salary": 6767
-    },
-    {
-      "id": "1f60",
-      "name": "Uday",
-      "age": 30,
-      "salary": 67541
-    },
-    {
-      "id": "9404",
-      "name": "harsh",
-      "age": 38,
-      "salary": 56432
-    },
-    {
-      "id": "0001",
-      "name": "Ayush",
-      "age": 43,
-      "salary": 87654
+      "id": "0050",
+      "fname": "Rohit",
+      "lname": "Selokar",
+      "age": 221,
+      "salary": 2222211,
+      "city": "11",
+      "pin": 2111,
+      "date": "2024-10-30"
     }
   ]
 }

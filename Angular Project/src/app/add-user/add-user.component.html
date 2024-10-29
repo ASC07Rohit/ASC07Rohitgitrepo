@@ -1,19 +1,41 @@
-<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="p-4 m-4 w-[337px] mt-[40px] shadow-xl">
-  
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="p-4 m-4 mt-[40px] shadow-xl">
+
   <div>
     <h1 class="text-[22px] text-center font-bold">Register here !!!</h1>
   </div>
-  <div class="mt-[20px]">
-    <label for="name" class="font-semibold">Name:</label> <br>
-    <input type="text" id="name" name="name" class="p-[5px] border w-[100%]" ngModel required>
+  <div class="mt-[20px] flex gap-4">
+    <div>
+      <label for="fname" class="font-semibold">First Name</label> <br>
+      <input type="text" id="fname" name="fname" class="p-[5px] border w-[100%]" ngModel required>
+    </div>
+    <div>
+      <label for="lname" class="font-semibold">Last Name</label> <br>
+      <input type="text" id="lname" name="lname" class="p-[5px] border w-[100%]" ngModel required>
+    </div>
   </div>
   <div class="mt-[20px]">
-    <label for="age" class="font-semibold">Age:</label><br>
+    <label for="age" class="font-semibold">Age</label><br>
     <input type="number" id="age" name="age" class="p-[5px] border w-[100%]" ngModel required>
   </div>
   <div class="mt-[20px]">
-    <label for="salary" class="font-semibold">Salary:</label><br>
+    <label for="salary" class="font-semibold">Salary</label><br>
     <input type="number" id="salary" name="salary" class="p-[5px] border w-[100%]" ngModel required>
   </div>
-  <button type="submit" [disabled]="userForm.invalid" class="font-semibold mt-[25px] p-[9px] bg-green-500 w-[100%] rounded-md cursor-pointer">Add User</button>
+  <div class="mt-[20px] flex gap-4">
+    <div>
+      <label for="city" class="font-semibold">City:</label> <br>
+      <input type="text" id="city" name="city" class="p-[5px] border w-[100%]" ngModel required>
+    </div>
+    <div>
+      <label for="pin" class="font-semibold">Pin Code</label><br>
+      <input type="number" id="pin" name="pin" class="p-[5px] border w-[100%]" ngModel required>
+    </div>
+  </div>
+
+  <div class="mt-[20px]">
+    <label for="date" class="font-semibold">Date</label><br>
+    <input type="date" id="date" name="date" class="p-[5px] border w-[100%]" ngModel required>
+  </div>
+  <button type="submit" [disabled]="userForm.invalid"
+    class="font-semibold mt-[25px] p-[9px] bg-green-500 w-[100%] rounded-md cursor-pointer">Add User</button>
 </form>

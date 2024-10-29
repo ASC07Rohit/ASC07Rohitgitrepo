@@ -1,6 +1,10 @@
 export interface User {
-    name: string;
+    fname: string;
+    lname:string;
     age: number;
     salary: number;
+    city:string;
+    pin:number;
+    date:number;
   }
   

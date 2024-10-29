@@ -16,9 +16,13 @@ export class AddUserComponent {
   // Method to handle form submission
   onSubmit(form: NgForm) {
     const newUser: User = {
-      name: form.value.name,
+      fname: form.value.fname,
+      lname: form.value.lname,
       age: form.value.age,
       salary: form.value.salary,
+      city: form.value.city,
+      pin: form.value.pin,
+      date: form.value.date,
     };
 
     this.userService.addUser(newUser).subscribe(() => {
