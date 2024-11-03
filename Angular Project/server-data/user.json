@@ -1,92 +1,6 @@
 {
   "users": [
     {
-      "id": "c399",
-      "name": "Rohit Selokar",
-      "age": "33",
-      "city": "Patna",
-      "email": "rohitselokar157@gmail.com",
-      "state": "Bihar"
-    },
-    {
-      "id": "2d4c",
-      "name": "Rohit Selokar",
-      "age": "33",
-      "city": "11",
-      "email": "rohitselokar157@gmail.com",
-      "state": "Karnataka"
-    },
-    {
-      "id": "176d",
-      "name": "Ayush Raj",
-      "age": "222",
-      "city": "Patna",
-      "email": "asc07Rohit@gmail.com",
-      "state": "Kerala"
-    },
-    {
-      "id": "3965",
-      "name": "Rohit Selokar",
-      "age": "22",
-      "city": "11",
-      "email": "asc07Rohit@gmail.com",
-      "state": "Kerala"
-    },
-    {
-      "id": "12e4",
-      "name": "Rohit Selokar",
-      "age": "22",
-      "city": "11",
-      "email": "asc07Rohit@gmail.com",
-      "state": "Kerala"
-    },
-    {
-      "id": "3ad7",
-      "name": "Rohit Selokar",
-      "age": "22",
-      "city": "11",
-      "email": "asc07Rohit@gmail.com",
-      "state": "Kerala"
-    },
-    {
-      "id": "35db",
-      "name": "Rohit Selokar",
-      "age": "22",
-      "city": "11",
-      "email": "asc07Rohit@gmail.com",
-      "state": "Kerala",
-      "address": "12 mahajan layout jaitala Road nagpur"
-    },
-    {
-      "id": "8353",
-      "name": "Rohit Selokar",
-      "age": "22",
-      "city": "11",
-      "email": "asc07Rohit@gmail.com",
-      "state": "Kerala",
-      "address": "klk"
-    },
-    {
-      "id": "b9e6",
-      "name": "Rohit Selokar",
-      "age": "22",
-      "city": "11",
-      "email": "asc07Rohit@gmail.com",
-      "state": "Kerala",
-      "address": "12 mahajan layout jaitala Road nagpur",
-      "pin": 2111
-    },
-    {
-      "id": "eaca",
-      "name": "Rohit Selokar",
-      "age": "3",
-      "city": "11",
-      "email": "asc07Rohit@gmail.com",
-      "state": "Kerala",
-      "address": "12 mahajan layout jaitala Road nagpur",
-      "pin": 2111
-    },
-    {
       "id": "bd31",
       "name": "Rohit Selokar",
       "age": "3",
@@ -96,6 +10,30 @@
       "address": "12 mahajan layout jaitala Road nagpur",
       "pin": 2111,
       "contactNo": 3342354321
+    },
+    {
+      "id": "5467",
+      "name": "Harsh Gade",
+      "age": "20",
+      "city": "Pune",
+      "email": "harsh@gmail.com",
+      "password": "h@1234",
+      "state": "Maharashtra",
+      "address": "23/A Pune Maharashtra",
+      "pin": 66754,
+      "contactNo": 9876543246
+    },
+    {
+      "id": "67fc",
+      "name": "Gaurav ",
+      "age": "33",
+      "city": "Patna",
+      "email": "g@gmail.com",
+      "password": "g@1234",
+      "state": "Bihar",
+      "address": "123 A patna Bihar",
+      "pin": 99876,
+      "contactNo": 987654321
     }
   ]
 }

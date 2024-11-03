@@ -4,6 +4,7 @@ export interface User {
     age:number|null;
     city:string;
     email:string;
+    password:string;
     state:string;
     address: any;
     pin:number;

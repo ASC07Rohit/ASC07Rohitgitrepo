@@ -16,8 +16,9 @@ export class RegisterComponent {
   age: number | null = null;
   id?: number;
   city: string = '';
-  email: string = ''
-  state: string = ''
+  email: string = '';
+  password: string = '';
+  state: string = '';
   address: any;
   pin: any;
   contactNo: any;
@@ -31,6 +32,7 @@ export class RegisterComponent {
       this.id = user.id;
       this.city = user.city;
       this.email = user.email;
+      this.password = user.password;
       this.state = user.state;
       this.address = user.address;
       this.pin = user.pin;
@@ -39,7 +41,18 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    const user: User = { id: this.id, name: this.name, age: this.age, city:this.city, email: this.email, state:this.state, address:this.address, pin:this.pin, contactNo:this.contactNo};
+    const user: User = {
+      id: this.id,
+      name: this.name,
+      age: this.age,
+      city: this.city,
+      email: this.email,
+      password: this.password,
+      state: this.state,
+      address: this.address,
+      pin: this.pin,
+      contactNo: this.contactNo,
+    };
 
     if (this.id) {
       this.userService.updateUser(user).subscribe(() => {
@@ -49,8 +62,9 @@ export class RegisterComponent {
         this.id = undefined;
         this.city = '';
         this.email = '';
+        this.password = '';
         this.state = '';
-        this.address = '';        
+        this.address = '';
         this.pin = '';
         this.contactNo = '';
       });
@@ -62,6 +76,7 @@ export class RegisterComponent {
         this.id = undefined;
         this.city = '';
         this.email = '';
+        this.password = '';
         this.state = '';
         this.address = '';
         this.pin = '';
