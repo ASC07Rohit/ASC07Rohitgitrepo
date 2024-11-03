@@ -7,17 +7,25 @@ import { User } from '../model/user.model';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:3000/users';  // JSON Server endpoint
+  private baseUrl = 'http://localhost:3000/users';  // JSON Server endpoint
 
   constructor(private http: HttpClient) {}
 
   // Get users from the JSON server
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
+    return this.http.get<User[]>(this.baseUrl);
   }
 
   // Add a new user to the JSON server
-  addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(this.baseUrl, user);
+  }
+
+  updateUser(user:User):Observable<User>{
+    return this.http.put<User>(`${this.baseUrl}/${user.id}`,user);
+  }
+
+  deleteUser(id:number):Observable<void>{
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 }

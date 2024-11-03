@@ -1,46 +1,40 @@
-<div class="mt-[30px]">
+<div class="flex justify-center my-20">
+    <table class="bg-white">
+        <thead class="text-[14px]">
+            <tr>
+                <th class="border border-gray-600 p-2 bg-gray-300">Sr No</th>
+                <th class="border border-gray-600 p-2 bg-gray-300">Name</th>
+                <th class="border border-gray-600 p-2 bg-gray-300">Age</th>
+                <th class="border border-gray-600 p-2 bg-gray-300">Email Id</th>
+                <th class="border border-gray-600 p-2 bg-gray-300">Mobile No</th>
+                <th class="border border-gray-600 p-2 bg-gray-300">City</th>
+                <th class="border border-gray-600 p-2 bg-gray-300">State</th>
+                <th class="border border-gray-600 p-2 bg-gray-300">Pin Code</th>
+                <th class="border border-gray-600 p-2 bg-gray-300">Action</th>
+            </tr>
+        </thead>
+        <tbody class="text-[14px] text-gray-700">
+            <tr *ngFor="let user of data, let i = index">
+                <td class="border border-gray-600 p-2">{{i+1}}</td>
+                <td class="border border-gray-600 p-2">{{user.name}}</td>
+                <td class="border border-gray-600 p-2">{{user.age}}</td>
+                <td class="border border-gray-600 p-2">{{user.email}}</td>
+                <td class="border border-gray-600 p-2">{{user.contactNo}}</td>
+                <td class="border border-gray-600 p-2">{{user.city}}</td>
+                <td class="border border-gray-600 p-2">{{user.state}}</td>
+                <td class="border border-gray-600 p-2">{{user.pin}}</td>
+                <td class="border border-gray-600 p-2">
 
-  <h2 class="text-[25px] text-center font-bold my-5">Dashboard</h2>
-  <table class="text-left">
-    <thead>
-      <tr>
-        <th>Sr No</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Age</th>
-        <th>Date Of Birth</th>
-        <th>Salary</th>
-        <th>City</th>
-        <th>Pin Code</th>
-        <th>Delete</th>
-        <th>Edit</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users; let i = index">
-        <td>{{i+1}}</td>
-        <td>{{user.fname}}</td>
-        <td>{{user.lname}}</td>
-        <td>{{user.age}}</td>
-        <td>{{user.date}}</td>
-        <td>{{user.salary}}</td>
-        <td>{{user.city}}</td>
-        <td>{{user.pin}}</td>
+                    <button class="ml-4" (click)="deleteUser(user.id!)">
+                        <img src="../../../public/delete.png" alt="delete icon" class="w-[20px]">
+                    </button>
 
+                    <button class="mx-6" (click)="editUser(user)">
+                        <img src="../../../public/edit.png" alt="edit icon" class="w-[20px]">
+                    </button>
 
-        <td class="text-center">
-          <button>
-            <img src="../../../public/edit.png" alt="">
-          </button>
-        </td>
-
-        <td class="text-center">
-          <button>
-            <img src="../../../public/delete.png" alt="">
-          </button>
-
-        </td>
-      </tr>
-    </tbody>
-  </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

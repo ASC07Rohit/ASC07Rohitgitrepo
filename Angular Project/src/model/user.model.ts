@@ -1,10 +1,12 @@
 export interface User {
-    fname: string;
-    lname:string;
-    age: number;
-    salary: number;
+    id?:number;
+    name:string;
+    age:number|null;
     city:string;
+    email:string;
+    state:string;
+    address: any;
     pin:number;
-    date:number;
+    contactNo:number;
   }
   

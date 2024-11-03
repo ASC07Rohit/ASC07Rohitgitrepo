@@ -1,0 +1,84 @@
+<div class="flex bg-white justify-center"
+    style="background-image: url(../../../public/bg_img.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <form class="border bg-gray-50 m-16 rounded-md shadow-md p-4" (ngSubmit)="onSubmit()">
+        <div>
+            <h1 class=" p-3 text-[26px] font-semibold text-center">
+                Register here !!!
+            </h1>
+        </div>
+
+        <br>
+        <div>
+            <label class="font-semibold text-[13px] text-gray-600">Name</label><br>
+            <input type="text" [(ngModel)]="name" name="name"
+                class="border border-slate-300 p-1.5 w-full mt-0.5 rounded-md" />
+        </div>
+
+        <br>
+        <div>
+            <label class="font-semibold text-[13px] text-gray-600">Email Id</label><br>
+            <input type="email" [(ngModel)]="email" name="email"
+                class="border border-slate-300 p-1.5 w-full mt-0.5 rounded-md" />
+        </div>
+
+        <br>
+        <div class="grid grid-cols-2 gap-8">
+            <div>
+                <label class="font-semibold text-[13px] text-gray-600">Age</label><br>
+                <input type="age" [(ngModel)]="age" name="age"
+                    class="border border-slate-300 p-1.5 mt-0.5 rounded-md" />
+            </div>
+
+            <div>
+                <label class="font-semibold text-[13px] text-gray-600">Contact No</label><br>
+                <input type="number" [(ngModel)]="contactNo" name="contactNo"
+                    class="border border-slate-300 p-1.5 mt-0.5 rounded-md" />
+            </div>
+        </div>
+
+        <br>
+
+        <div class="grid grid-cols-2 gap-8">
+            <div>
+                <label class="font-semibold text-[13px] text-gray-600">City</label><br>
+                <input type="text" [(ngModel)]="city" name="city"
+                    class="border border-slate-300 p-1.5 mt-0.5 rounded-md" />
+            </div>
+
+            <div>
+                <label class="font-semibold text-[13px] text-gray-600">pin Code</label><br>
+                <input type="number" [(ngModel)]="pin" name="pin"
+                    class="border border-slate-300 p-1.5 mt-0.5 rounded-md" />
+            </div>
+
+
+        </div>
+
+        <br>
+        <div>
+            <label class="font-semibold text-[13px] text-gray-600">State</label><br>
+            <select name="state" class="p-1.5 border border-slate-300 px-[43px] mt-0.5 rounded-md" [(ngModel)]="state">
+                <option>Maharashtra</option>
+                <option>Karnataka</option>
+                <option>Bihar</option>
+                <option>Kerala</option>
+                <option>Telangana</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+
+        <br>
+        <div>
+            <label class="font-semibold text-[13px] text-gray-600">Address</label><br>
+            <textarea name="address" rows="3" class="border border-slate-300 w-full mt-0.5 rounded-md"
+                [(ngModel)]="address" name="address"></textarea>
+        </div>
+
+        <br>
+        <div>
+            <button type="submit"
+                class="p-1.5 bg-green-600 text-white px-8 text-[14px]  font-semibold rounded-md">Submit</button>
+        </div>
+    </form>
+</div>

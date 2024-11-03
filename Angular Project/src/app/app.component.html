@@ -1,17 +1,2 @@
 <app-navbar></app-navbar>
-<div class="flex flex-col items-center justify-center mt-14">
-  <div>
-    <button (click)="displayAddUser()" class="border ml-7 p-2 font-semibold bg-red-500 rounded-md px-4">Add
-      User</button>
-    <button (click)="displayListUsers()" class="border ml-7 p-2 font-semibold bg-green-500 rounded-md px-4">List All
-      Users</button>
-  </div>
-
-  <div *ngIf="showAddUser">
-    <app-add-user></app-add-user>
-  </div>
-
-  <div *ngIf="showListUsers">
-    <app-list-users></app-list-users>
-  </div>
-</div>
+<app-footer></app-footer>
