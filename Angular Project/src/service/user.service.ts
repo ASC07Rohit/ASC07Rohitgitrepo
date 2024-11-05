@@ -6,8 +6,10 @@ import { User } from '../model/user.model';
 @Injectable({
   providedIn: 'root',
 })
+
+
 export class UserService {
-  private baseUrl = 'http://localhost:3000/users'; // JSON Server endpoint
+  private baseUrl = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) {}
 

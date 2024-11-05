@@ -6,8 +6,8 @@ import { User } from '../../model/user.model';
 
 @Component({
   selector: 'app-list-users',
-  standalone: true,
-  imports: [CommonModule],
+  // standalone: true,
+  // imports: [CommonModule],
   templateUrl: './list-user.component.html',
   styleUrls: ['./list-user.component.css'],
 })

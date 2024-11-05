@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
 import { User } from '../../model/user.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
-  standalone: true,
-  imports: [FormsModule],
+  // standalone: true,
+  // imports: [FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
@@ -56,7 +57,10 @@ export class RegisterComponent {
 
     if (this.id) {
       this.userService.updateUser(user).subscribe(() => {
-        alert('User Updated !!');
+        Swal.fire({
+          title: 'User Updated !!',
+          icon: 'success',
+        });
         this.name = '';
         this.age = null;
         this.id = undefined;
@@ -70,7 +74,10 @@ export class RegisterComponent {
       });
     } else {
       this.userService.createUser(user).subscribe(() => {
-        alert('User Created !!!');
+        Swal.fire({
+          title: 'User Registered Successfully',
+          icon: 'success',
+        });
         this.name = '';
         this.age = null;
         this.id = undefined;
