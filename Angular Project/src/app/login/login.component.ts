@@ -6,8 +6,6 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
-  // standalone: true,
-  // imports: [FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -38,6 +36,7 @@ export class LoginComponent {
             title: 'Signed in successfully',
           });
 
+          sessionStorage.setItem('loggedIn', 'yes');
           this.router.navigate(['/list-all-users']);
         } else {
           Swal.fire({

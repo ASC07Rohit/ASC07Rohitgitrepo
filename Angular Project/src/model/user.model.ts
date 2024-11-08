@@ -1,13 +1,9 @@
-export interface User {
-    id?:number;
-    name:string;
-    age:number|null;
-    city:string;
-    email:string;
-    password:string;
-    state:string;
-    address: any;
-    pin:number;
-    contactNo:number;
-  }
-  
+export class User {
+  id?: number;
+  name: string = '';
+  email: string = '';
+  password: string = '';
+  city: string = '';
+  state: string = '';
+  address: string = ''; // Include other properties as required
+}

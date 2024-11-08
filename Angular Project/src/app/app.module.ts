@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AppRoutingModule } from './app-routing.module';
     HomeComponent,
     FooterComponent,
     ContactComponent,
+    UpdateUserComponent
   ],
   imports: [
     CommonModule,

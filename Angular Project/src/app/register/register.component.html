@@ -1,8 +1,8 @@
 <div class="flex bg-white justify-center">
     <!-- background-image: url(../../../public/bg_img.jpg); background-position: center; background-repeat: no-repeat; background-size:cover; -->
-    <form class="border bg-gray-100 my-60 md:my-16 rounded-md shadow-md p-4" (ngSubmit)="onSubmit()">
+    <form class="border bg-gray-100 my-60 md:my-16 rounded-md shadow-xl p-4" (ngSubmit)="onSubmit()">
         <div>
-            <h1 class=" p-3 text-[26px] font-semibold text-center">
+            <h1 class=" p-3 font-serif text-[24px] font-semibold text-center">
                 Register here !!!
             </h1>
         </div>
@@ -30,7 +30,7 @@
         </div>
 
         <br>
-        <div class="md:grid grid-cols-2 gap-8">
+        <!-- <div class="md:grid grid-cols-2 gap-8">
             <div>
                 <label class="font-semibold text-[13px] text-gray-600">Age</label><br>
                 <input type="age" [(ngModel)]="age" name="age"
@@ -42,25 +42,25 @@
                 <input type="number" [(ngModel)]="contactNo" name="contactNo"
                     class="border border-slate-300 p-1.5 mt-0.5 rounded-md w-full" />
             </div>
-        </div>
+        </div> -->
 
         <br>
 
-        <div class="md:grid grid-cols-2 gap-8">
-            <div>
-                <label class="font-semibold text-[13px] text-gray-600">City</label><br>
-                <input type="text" [(ngModel)]="city" name="city"
-                    class="border border-slate-300 p-1.5 mt-0.5 rounded-md w-full" />
-            </div>
+        <!-- <div class="md:grid grid-cols-2 gap-8"> -->
+        <div>
+            <label class="font-semibold text-[13px] text-gray-600">City</label><br>
+            <input type="text" [(ngModel)]="city" name="city"
+                class="border border-slate-300 p-1.5 mt-0.5 rounded-md w-full" />
+        </div>
 
-            <div>
+        <!-- <div>
                 <label class="font-semibold text-[13px] text-gray-600 w-full">pin Code</label><br>
                 <input type="number" [(ngModel)]="pin" name="pin"
                     class="border border-slate-300 p-1.5 mt-0.5 rounded-md" />
-            </div>
+            </div> -->
 
 
-        </div>
+        <!-- </div> -->
 
         <br>
         <div>
@@ -86,7 +86,11 @@
         <br>
         <div>
             <button type="submit"
-                class="p-1.5 bg-green-600 text-white px-8 text-[14px]  font-semibold rounded-md">Submit</button>
+                class="p-1.5 bg-green-600 text-white px-8 text-[14px]  font-semibold rounded-md w-full">Submit</button>
         </div>
+        <p class="text-blue-500 font-semibold text-[13px] text-center mt-4">Already have an Account ?? <span
+                class="text-red-500">
+                <a routerLink="/login">Login</a>
+            </span></p>
     </form>
 </div>

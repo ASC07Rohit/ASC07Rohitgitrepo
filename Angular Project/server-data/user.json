@@ -1,75 +1,58 @@
 {
   "users": [
     {
-      "id": "bd31",
+      "id": "8097",
+      "name": "Bhargav Ascendion",
+      "city": "Bangalore",
+      "email": "bhargav@gmail.com",
+      "password": "123",
+      "state": "Karnataka",
+      "address": "123343"
+    },
+    {
+      "id": "8693",
       "name": "Rohit Selokar",
-      "age": "3",
       "city": "11",
       "email": "asc07Rohit@gmail.com",
+      "password": "123",
       "state": "Kerala",
-      "address": "12 mahajan layout jaitala Road nagpur",
-      "pin": 2111,
-      "contactNo": 3342354321
+      "address": "12 mahajan layout jaitala Road nagpur"
     },
     {
-      "id": "5467",
-      "name": "Harsh Gade",
-      "age": "20",
-      "city": "Pune",
-      "email": "harsh@gmail.com",
-      "password": "h@1234",
-      "state": "Maharashtra",
-      "address": "23/A Pune Maharashtra",
-      "pin": 66754,
-      "contactNo": 9876543246
-    },
-    {
-      "id": "67fc",
-      "name": "Gaurav ",
-      "age": "33",
-      "city": "Patna",
-      "email": "g@gmail.com",
-      "password": "g@1234",
-      "state": "Other",
-      "address": "123 A patna Bihar",
-      "pin": 99876,
-      "contactNo": 987654321
-    },
-    {
-      "id": "90b2",
-      "name": "Ayush Raj",
-      "age": "30",
-      "city": "Patna",
+      "id": "6939",
+      "name": "Ayush",
+      "city": "pune",
       "email": "ayush@gmail.com",
-      "password": "Ayush@1234",
-      "state": "Bihar",
-      "address": "Market Square Mall, Patna ",
-      "pin": 887760,
-      "contactNo": 90987654
+      "password": "123",
+      "state": "Maharashtra",
+      "address": "Bihar Patna"
     },
     {
-      "id": "0522",
-      "name": "Jalaj",
-      "age": "66",
+      "id": "7127",
+      "name": "Harsh Gade",
       "city": "Pune",
-      "email": "j@gmail.com",
-      "password": "J@1234",
-      "state": "Maharashtra",
-      "address": "pune maharashtra",
-      "pin": 88769,
-      "contactNo": 897865432
+      "email": "yogesh@gmail.com",
+      "password": "qwer",
+      "state": "Bihar",
+      "address": "asdasdad"
     },
     {
-      "id": "3e42",
-      "name": "Sahil Sendre",
-      "age": "21",
-      "city": "Nagpur",
-      "email": "sahil@gmail.com",
-      "password": "S@1234",
+      "id": "1234",
+      "name": "Rohit Selokar",
+      "city": "Pune",
+      "email": "rohitselokar15@gmail.com",
+      "password": "123",
       "state": "Maharashtra",
-      "address": "12 mahajan layout jaitala Road nagpur",
-      "pin": 2222,
-      "contactNo": 9857648321
+      "address": "qwqwqqwqwqwq"
+    },
+    {
+      "id": "5376",
+      "name": "Nitish",
+      "city": "Bangalore",
+      "email": "nitish@gmail.com",
+      "password": "123",
+      "state": "Karnataka",
+      "address": "12 bangalore Karnataka"
     }
   ]
 }

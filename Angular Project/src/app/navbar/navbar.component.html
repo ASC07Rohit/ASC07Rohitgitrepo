@@ -1,17 +1,20 @@
-<nav class="flex bg-slate-700 text-white p-4 font-semibold justify-around text-[14px]">
+<nav
+    class="font-serif flex p-1 font-semibold justify-around items-center text-[13px] sticky top-0 bg-gray-50 shadow-sm ">
     <div>
-        <a routerLink="/" class="">Rohit</a>
+        <a routerLink="/" class="">
+            <img src="../../../public/asc-logo.png" alt="logo" class="h-12">
+        </a>
     </div>
     <div>
         <ul class="flex">
             <li class="ml-8 hover:border"><a routerLink="/">Home</a></li>
             <li class="ml-8 hover:border"><a routerLink="/list-all-users">Dashboard</a></li>
             <li class="ml-8 hover:border"><a routerLink="/contact">Contact us</a></li>
+            <li class="ml-8 hover:border"><a routerLink="/register">Register</a></li>
         </ul>
     </div>
     <div>
-        <button routerLink="/register">Register / </button>
-        <button routerLink="/login" class="ml-2">Login</button>
+        <button routerLink="/login" class="ml-2">Sign In</button>
     </div>
 </nav>
 <router-outlet></router-outlet>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
 import { User } from '../../model/user.model';
@@ -7,88 +6,44 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
-  // standalone: true,
-  // imports: [FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
 export class RegisterComponent {
   name: string = '';
-  age: number | null = null;
+  // age: number | null = null;
   id?: number;
   city: string = '';
   email: string = '';
   password: string = '';
   state: string = '';
   address: any;
-  pin: any;
-  contactNo: any;
+  // pin: any;
+  // contactNo: any;
 
-  constructor(private userService: UserService, private router: Router) {
-    const navigation = this.router.getCurrentNavigation();
-    if (navigation?.extras.state) {
-      const user: User = navigation?.extras.state['user'];
-      this.name = user.name;
-      this.age = user.age;
-      this.id = user.id;
-      this.city = user.city;
-      this.email = user.email;
-      this.password = user.password;
-      this.state = user.state;
-      this.address = user.address;
-      this.pin = user.pin;
-      this.contactNo = user.contactNo;
-    }
-  }
+  constructor(private userService: UserService, private router: Router) {}
 
   onSubmit() {
     const user: User = {
       id: this.id,
       name: this.name,
-      age: this.age,
+      // age: this.age,
       city: this.city,
       email: this.email,
       password: this.password,
       state: this.state,
       address: this.address,
-      pin: this.pin,
-      contactNo: this.contactNo,
+      // pin: this.pin,
+      // contactNo: this.contactNo,
     };
 
-    if (this.id) {
-      this.userService.updateUser(user).subscribe(() => {
-        Swal.fire({
-          title: 'User Updated !!',
-          icon: 'success',
-        });
-        this.name = '';
-        this.age = null;
-        this.id = undefined;
-        this.city = '';
-        this.email = '';
-        this.password = '';
-        this.state = '';
-        this.address = '';
-        this.pin = '';
-        this.contactNo = '';
+    this.userService.createUser(user).subscribe(() => {
+      Swal.fire({
+        title: 'User Registered Successfully',
+        icon: 'success',
       });
-    } else {
-      this.userService.createUser(user).subscribe(() => {
-        Swal.fire({
-          title: 'User Registered Successfully',
-          icon: 'success',
-        });
-        this.name = '';
-        this.age = null;
-        this.id = undefined;
-        this.city = '';
-        this.email = '';
-        this.password = '';
-        this.state = '';
-        this.address = '';
-        this.pin = '';
-        this.contactNo = '';
-      });
-    }
+
+      this.router.navigate(['login']);
+    });
   }
 }

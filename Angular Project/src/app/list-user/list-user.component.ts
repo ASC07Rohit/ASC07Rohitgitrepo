@@ -6,8 +6,6 @@ import { User } from '../../model/user.model';
 
 @Component({
   selector: 'app-list-users',
-  // standalone: true,
-  // imports: [CommonModule],
   templateUrl: './list-user.component.html',
   styleUrls: ['./list-user.component.css'],
 })
@@ -32,7 +30,11 @@ export class ListUsersComponent implements OnInit {
     });
   }
 
-  editUser(user: User) {
-    this.router.navigate(['/register'], { state: { user } });
+  updateUser(userId: any | undefined): void {
+    if (userId !== undefined) {
+      this.router.navigate(['/update-user', userId]);
+    } else {
+      console.log('Employee ID is undefined');
+    }
   }
 }

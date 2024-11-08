@@ -1,7 +1,7 @@
 <div class="border flex flex-col bg-white justify-center items-center">
     <form class="border bg-gray-100 p-6 m-20 rounded-lg shadow-lg w-[300px]" (ngSubmit)="onLogin()">
         <div>
-            <p class="font-semibold text-center text-[24px]">Login Here !!</p>
+            <p class="font-semibold text-center text-[24px] font-serif">Login Here !!</p>
         </div>
         <br>
         <div>
@@ -27,7 +27,9 @@
         <br>
 
         <div class="text-[13px] font-semibold text-center">
-            <p class="text-gray-600">New User ? <span class="text-blue-400">Create Account</span></p>
+            <p class="text-gray-600">New User ? <span class="text-blue-400">
+                    <a routerLink="/register">Create Account</a>
+                </span></p>
         </div>
     </form>
 </div>
