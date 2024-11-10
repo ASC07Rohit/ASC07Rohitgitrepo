@@ -5,25 +5,16 @@
       "name": "Bhargav Ascendion",
       "city": "Bangalore",
       "email": "bhargav@gmail.com",
-      "password": "123",
+      "password": "123456",
       "state": "Karnataka",
       "address": "123343"
-    },
-    {
-      "id": "8693",
-      "name": "Rohit Selokar",
-      "city": "11",
-      "email": "asc07Rohit@gmail.com",
-      "password": "123",
-      "state": "Kerala",
-      "address": "12 mahajan layout jaitala Road nagpur"
     },
     {
       "id": "6939",
       "name": "Ayush",
       "city": "pune",
       "email": "ayush@gmail.com",
-      "password": "123",
+      "password": "123456",
       "state": "Maharashtra",
       "address": "Bihar Patna"
     },
@@ -32,27 +23,54 @@
       "name": "Harsh Gade",
       "city": "Pune",
       "email": "yogesh@gmail.com",
-      "password": "qwer",
+      "password": "123456",
       "state": "Bihar",
       "address": "asdasdad"
     },
     {
-      "id": "1234",
-      "name": "Rohit Selokar",
-      "city": "Pune",
-      "email": "rohitselokar15@gmail.com",
-      "password": "123",
-      "state": "Maharashtra",
-      "address": "qwqwqqwqwqwq"
-    },
-    {
-      "id": "5376",
+      "id": "5273",
       "name": "Nitish",
       "city": "Bangalore",
       "email": "nitish@gmail.com",
-      "password": "123",
+      "password": "123456",
       "state": "Karnataka",
       "address": "12 bangalore Karnataka"
+    },
+    {
+      "id": "7788",
+      "name": "Ayush Raj",
+      "email": "a@gmail.com",
+      "password": "123456",
+      "city": "Nagpur",
+      "state": "Maharashtra",
+      "address": "qwq"
+    },
+    {
+      "id": "2513",
+      "name": "Sandeep",
+      "email": "sandeep@gmail.com",
+      "password": "123456",
+      "city": "Banagalore",
+      "state": "Karnataka",
+      "address": "Nagpur maharashtra - 440036"
+    },
+    {
+      "id": "b4ff",
+      "name": "Rohit",
+      "email": "rohit@gmail.com",
+      "password": "123456",
+      "city": "Nagpur",
+      "state": "Maharashtra",
+      "address": "ngp maharashtra"
+    },
+    {
+      "id": "9a71",
+      "name": "Uday",
+      "email": "uday@gmail.com",
+      "password": "123456",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "address": "pune maharashtra"
     }
   ]
 }

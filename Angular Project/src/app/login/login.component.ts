@@ -1,25 +1,40 @@
-import { Component } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
-  email: string = '';
-  password: string = '';
+export class LoginComponent implements OnInit {
+  loginForm: FormGroup;
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router,
+    private navbarComponent: NavbarComponent
+  ) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
+  }
 
-  onLogin() {
-    this.userService
-      .validateUser(this.email, this.password)
-      .subscribe((isValid) => {
+  ngOnInit(): void {}
+
+  onLogin(): void {
+    if (this.loginForm.valid) {
+      const { email, password } = this.loginForm.value;
+
+      this.userService.validateUser(email, password).subscribe((isValid) => {
         if (isValid) {
+          this.navbarComponent.setLoginStatus();
+
           const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
@@ -31,6 +46,7 @@ export class LoginComponent {
               toast.onmouseleave = Swal.resumeTimer;
             },
           });
+
           Toast.fire({
             icon: 'success',
             title: 'Signed in successfully',
@@ -45,5 +61,11 @@ export class LoginComponent {
           });
         }
       });
+    } else {
+      Swal.fire({
+        icon: 'error',
+        text: 'Please fill in the required fields correctly',
+      });
+    }
   }
 }

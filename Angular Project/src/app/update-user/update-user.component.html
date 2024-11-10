@@ -1,27 +1,27 @@
-<div class="border border-green-600 flex flex-col justify-center items-center h-screen">
+<div class="border border-green-600 flex flex-col justify-center items-center h-screen update-bg-image">
     <form (ngSubmit)="updateUser()" #updateForm="ngForm"
-        class="border p-4 shadow-xl rounded-md text-[13px] bg-gray-100">
+        class="border p-8 shadow-xl rounded-md text-[13px] bg-gray-100">
 
-        <p class="text-[24px] font-semibold font-serif text-center mb-8 my-4">Update Form here !!!</p>
+        <p class="text-[24px] font-semibold font-serif text-center mb-8">Update Form here !!!</p>
 
-        <div class="mt-6">
+        <div class="mt-10">
             <label class="font-semibold text-gray-600">Name</label> <br>
             <input type="text" name="name" [(ngModel)]="user.name"
-                class="border mt-1 p-1.5 w-full rounded-md border-gray-300">
+                class="border mt-0.5 p-1.5 w-full rounded-md border-gray-300">
         </div>
 
         <div class="grid grid-cols-2 gap-6">
             <div class="mt-6">
                 <label class="font-semibold text-gray-600">Email Id</label> <br>
                 <input type="email" name="email" [(ngModel)]="user.email"
-                    class="border mt-1 p-1.5 w-full rounded-md border-gray-300">
+                    class="border mt-0.5 p-1.5 w-full rounded-md border-gray-300">
             </div>
 
 
             <div class="mt-6">
                 <label class="font-semibold text-gray-600">Password</label> <br>
                 <input type="password" name="password" [(ngModel)]="user.password"
-                    class="border mt-1 p-1.5 w-full rounded-md border-gray-300">
+                    class="border mt-0.5 p-1.5 w-full rounded-md border-gray-300">
             </div>
 
         </div>
@@ -29,9 +29,9 @@
 
         <div class="grid grid-cols-2 gap-6">
             <div class="mt-6">
-                <label class="font-semibold text-gray-600">City :</label><br>
+                <label class="font-semibold text-gray-600">City</label><br>
                 <input type="text" name="city" [(ngModel)]="user.city"
-                    class="border mt-1 p-1.5 w-full rounded-md border-gray-300">
+                    class="border mt-0.5 p-1.5 w-full rounded-md border-gray-300">
             </div>
 
 
@@ -50,7 +50,7 @@
         </div>
 
 
-        <div class="mt-8">
+        <div class="mt-9">
             <button class="border p-2 bg-green-600 rounded-lg w-full font-semibold text-white">Update</button>
         </div>
     </form>

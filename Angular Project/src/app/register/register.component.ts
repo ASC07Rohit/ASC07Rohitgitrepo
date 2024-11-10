@@ -1,49 +1,60 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
-import { User } from '../../model/user.model';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  name: string = '';
-  // age: number | null = null;
-  id?: number;
-  city: string = '';
-  email: string = '';
-  password: string = '';
-  state: string = '';
-  address: any;
-  // pin: any;
-  // contactNo: any;
+  registerForm: FormGroup;
 
-  constructor(private userService: UserService, private router: Router) {}
-
-  onSubmit() {
-    const user: User = {
-      id: this.id,
-      name: this.name,
-      // age: this.age,
-      city: this.city,
-      email: this.email,
-      password: this.password,
-      state: this.state,
-      address: this.address,
-      // pin: this.pin,
-      // contactNo: this.contactNo,
-    };
-
-    this.userService.createUser(user).subscribe(() => {
-      Swal.fire({
-        title: 'User Registered Successfully',
-        icon: 'success',
-      });
-
-      this.router.navigate(['login']);
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {
+    this.registerForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+      address: ['', Validators.required],
     });
+  }
+
+  onSubmit(): void {
+    if (this.registerForm.valid) {
+      const newUser = this.registerForm.value;
+
+      this.userService.createUser(newUser).subscribe(
+        (user) => {
+          Swal.fire({
+            icon: 'success',
+            title: 'User registered successfully!',
+            showConfirmButton: false,
+            timer: 2000,
+          });
+
+          this.router.navigate(['/login']);
+        },
+        (error) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error registering user',
+            text: error.message || 'Something went wrong',
+          });
+        }
+      );
+    } else {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Please fill all required fields',
+      });
+    }
   }
 }

@@ -11,6 +11,8 @@ import { User } from '../../model/user.model';
 })
 export class ListUsersComponent implements OnInit {
   data: User[] = [];
+  filteredData: User[] = [];
+  searchTerm: string = '';
 
   constructor(private userService: UserService, private router: Router) {}
 
@@ -21,7 +23,16 @@ export class ListUsersComponent implements OnInit {
   fetchUsers() {
     this.userService.getUsers().subscribe((response) => {
       this.data = response;
+      this.filteredData = response;
     });
+  }
+
+  onSearch() {
+    this.filteredData = this.data.filter((user) =>
+      user.name
+        .toLocaleLowerCase()
+        .includes(this.searchTerm.toLocaleLowerCase())
+    );
   }
 
   deleteUser(id: number) {

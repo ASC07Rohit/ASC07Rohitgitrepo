@@ -1,0 +1,7 @@
+.update-bg-image {
+  background-image: url("../../../public/update-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}

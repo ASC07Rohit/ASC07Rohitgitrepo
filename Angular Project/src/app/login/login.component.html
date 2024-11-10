@@ -1,35 +1,45 @@
-<div class="border flex flex-col bg-white justify-center items-center">
-    <form class="border bg-gray-100 p-6 m-20 rounded-lg shadow-lg w-[300px]" (ngSubmit)="onLogin()">
-        <div>
-            <p class="font-semibold text-center text-[24px] font-serif">Login Here !!</p>
-        </div>
-        <br>
-        <div>
-            <label class="font-semibold text-gray-600 text-[14px]">Email Id</label><br>
-            <input type="email" [(ngModel)]="email" name="email"
-                class="border border-slate-400 p-1 rounded-md mt-1 w-full">
-        </div>
-        <br>
-        <div>
-            <div class="flex justify-between">
-                <p class="font-semibold text-gray-600 text-[14px]">Password</p>
-                <p class="text-blue-400 font-semibold text-[13px]">Forgot password?</p>
-            </div>
-            <input type="password" [(ngModel)]="password" name="password"
-                class="border border-slate-400 p-1 rounded-md mt-1 w-full">
-        </div>
-        <br>
+<div class="flex justify-end login-bg-image">
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()"
+    class="border bg-gray-100 my-60 md:my-16 rounded-md shadow-xl p-8 mr-[240px]">
+    <div>
+      <h1 class="font-serif text-[24px] font-semibold text-center">
+        Login Here !!!
+      </h1>
+    </div>
 
-        <div class="mt-3">
-            <button class="border p-1.5 w-full rounded-md text-[13px] bg-green-600 text-white font-semibold">Sign
-                In</button>
-        </div>
-        <br>
+    <div class="mt-10">
+      <label class="font-semibold text-[13px] text-gray-600">Email Id</label><br>
+      <input type="email" formControlName="email" placeholder="Enter Email"
+        class="border border-slate-300 p-1.5 w-full mt-0.5 rounded-md" />
+    </div>
+    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-red-500 text-sm">
+      <p *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</p>
+      <p *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email</p>
+    </div>
 
-        <div class="text-[13px] font-semibold text-center">
-            <p class="text-gray-600">New User ? <span class="text-blue-400">
-                    <a routerLink="/register">Create Account</a>
-                </span></p>
-        </div>
-    </form>
+
+
+    <div class="mt-6">
+      <label class="font-semibold text-[13px] text-gray-600">Password</label><br>
+      <input type="password" formControlName="password" placeholder="Enter Password"
+        class="border border-slate-300 p-1.5 w-full mt-0.5 rounded-md" />
+    </div>
+    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-red-500 text-sm">
+      <p *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</p>
+      <p *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters</p>
+    </div>
+
+
+
+    <div class="mt-6">
+      <button type="submit" class="p-1.5 bg-green-600 text-white px-8 text-[14px] font-semibold rounded-md w-full"
+        [disabled]="loginForm.invalid">
+        Login
+      </button>
+    </div>
+
+    <p class="text-blue-500 font-semibold text-[13px] text-center mt-4">
+      Don't have an Account ?? <span class="text-red-500"><a routerLink="/register">Register</a></span>
+    </p>
+  </form>
 </div>

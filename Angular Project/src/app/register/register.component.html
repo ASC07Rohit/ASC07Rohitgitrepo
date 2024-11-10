@@ -1,96 +1,101 @@
-<div class="flex bg-white justify-center">
-    <!-- background-image: url(../../../public/bg_img.jpg); background-position: center; background-repeat: no-repeat; background-size:cover; -->
-    <form class="border bg-gray-100 my-60 md:my-16 rounded-md shadow-xl p-4" (ngSubmit)="onSubmit()">
+<div class="flex bg-white justify-center register-bg-image">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"
+        class="border bg-gray-100 my-60 md:my-16 rounded-md shadow-xl p-8 mr-[200px]">
         <div>
-            <h1 class=" p-3 font-serif text-[24px] font-semibold text-center">
+            <h1 class="font-serif text-[24px] font-semibold text-center">
                 Register here !!!
             </h1>
         </div>
 
-        <br>
-        <div>
+        <div class="mt-10">
             <label class="font-semibold text-[13px] text-gray-600">Name</label><br>
-            <input type="text" [(ngModel)]="name" name="name"
+            <input type="text" formControlName="name" placeholder="Enter Name"
                 class="border border-slate-300 p-1.5 w-full mt-0.5 rounded-md" />
         </div>
+        <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+            class="text-red-500 text-sm">
+            <p *ngIf="registerForm.get('name')?.errors?.['required']">Name is required</p>
+        </div>
 
-        <br>
-        <div class="md:grid grid-cols-2 gap-8">
+        <div class="mt-6 md:grid grid-cols-2 gap-8">
             <div>
-                <label class="font-semibold text-[13px] text-gray-600">Email Id</label><br>
-                <input type="email" [(ngModel)]="email" name="email"
-                    class="border border-slate-300 p-1.5 w-full mt-0.5 rounded-md" />
+                <div>
+                    <label class="font-semibold text-[13px] text-gray-600">Email Id</label><br>
+                    <input type="email" formControlName="email" placeholder="Enter Email"
+                        class="border border-slate-300 p-1.5 w-full mt-0.5 rounded-md" />
+                </div>
+                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                    class="text-red-500 text-sm">
+                    <p *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</p>
+                    <p *ngIf="registerForm.get('email')?.errors?.['email']">Please enter a valid email</p>
+                </div>
             </div>
 
             <div>
-                <label class="font-semibold text-[13px] text-gray-600">Password</label><br>
-                <input type="password" [(ngModel)]="password" name="password"
-                    class="border border-slate-300 p-1.5 w-full mt-0.5 rounded-md" />
+                <div>
+                    <label class="font-semibold text-[13px] text-gray-600">Password</label><br>
+                    <input type="password" formControlName="password" placeholder="Enter Password"
+                        class="border border-slate-300 p-1.5 w-full mt-0.5 rounded-md" />
+                </div>
+                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                    class="text-red-500 text-sm">
+                    <p *ngIf="registerForm.get('password')?.errors?.['required']">Password is required</p>
+                    <p *ngIf="registerForm.get('password')?.errors?.['minlength']">Password must be at least 6
+                        characters
+                    </p>
+                    <p *ngIf="registerForm.get('password')?.errors?.['maxlength']">Password cannot be more than 6
+                        characters
+                    </p>
+                </div>
             </div>
         </div>
 
-        <br>
-        <!-- <div class="md:grid grid-cols-2 gap-8">
-            <div>
-                <label class="font-semibold text-[13px] text-gray-600">Age</label><br>
-                <input type="age" [(ngModel)]="age" name="age"
-                    class="border border-slate-300 p-1.5 mt-0.5 rounded-md w-full" />
-            </div>
-
-            <div>
-                <label class="font-semibold text-[13px] text-gray-600">Contact No</label><br>
-                <input type="number" [(ngModel)]="contactNo" name="contactNo"
-                    class="border border-slate-300 p-1.5 mt-0.5 rounded-md w-full" />
-            </div>
-        </div> -->
-
-        <br>
-
-        <!-- <div class="md:grid grid-cols-2 gap-8"> -->
-        <div>
+        <!-- City Field -->
+        <div class="mt-6">
             <label class="font-semibold text-[13px] text-gray-600">City</label><br>
-            <input type="text" [(ngModel)]="city" name="city"
-                class="border border-slate-300 p-1.5 mt-0.5 rounded-md w-full" />
+            <input type="text" formControlName="city" placeholder="Enter City"
+                class="border border-slate-300 p-1.5 w-full mt-0.5 rounded-md" />
+        </div>
+        <div *ngIf="registerForm.get('city')?.invalid && registerForm.get('city')?.touched"
+            class="text-red-500 text-sm">
+            <p *ngIf="registerForm.get('city')?.errors?.['required']">City is required</p>
         </div>
 
-        <!-- <div>
-                <label class="font-semibold text-[13px] text-gray-600 w-full">pin Code</label><br>
-                <input type="number" [(ngModel)]="pin" name="pin"
-                    class="border border-slate-300 p-1.5 mt-0.5 rounded-md" />
-            </div> -->
-
-
-        <!-- </div> -->
-
-        <br>
-        <div>
+        <!-- State Field -->
+        <div class="mt-6">
             <label class="font-semibold text-[13px] text-gray-600">State</label><br>
-            <select name="state" class="p-1.5 border border-slate-300 pr-[75px] mt-0.5 rounded-md" [(ngModel)]="state">
-                <option>Maharashtra</option>
-                <option>Karnataka</option>
-                <option>Bihar</option>
-                <option>Kerala</option>
-                <option>Telangana</option>
-                <option>Other</option>
+            <select formControlName="state" class="p-1.5 border border-slate-300 pr-[75px] mt-0.5 rounded-md">
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Other">Other</option>
             </select>
         </div>
+        <div *ngIf="registerForm.get('state')?.invalid && registerForm.get('state')?.touched"
+            class="text-red-500 text-sm">
+            <p *ngIf="registerForm.get('state')?.errors?.['required']">State is required</p>
+        </div>
 
-
-        <br>
-        <div>
+        <!-- Address Field -->
+        <div class="mt-6">
             <label class="font-semibold text-[13px] text-gray-600">Address</label><br>
-            <textarea name="address" rows="3" class="border border-slate-300 w-full mt-0.5 rounded-md"
-                [(ngModel)]="address" name="address"></textarea>
+            <textarea formControlName="address" placeholder="Enter Address" rows="3"
+                class="border border-slate-300 w-full mt-0.5 rounded-md"></textarea>
+        </div>
+        <div *ngIf="registerForm.get('address')?.invalid && registerForm.get('address')?.touched"
+            class="text-red-500 text-sm">
+            <p *ngIf="registerForm.get('address')?.errors?.['required']">Address is required</p>
         </div>
 
-        <br>
-        <div>
-            <button type="submit"
-                class="p-1.5 bg-green-600 text-white px-8 text-[14px]  font-semibold rounded-md w-full">Submit</button>
+        <!-- Submit Button -->
+        <div class="mt-6">
+            <button type="submit" class="p-1.5 bg-green-600 text-white px-8 text-[14px] font-semibold rounded-md w-full"
+                [disabled]="registerForm.invalid">Submit</button>
         </div>
+
         <p class="text-blue-500 font-semibold text-[13px] text-center mt-4">Already have an Account ?? <span
-                class="text-red-500">
-                <a routerLink="/login">Login</a>
-            </span></p>
+                class="text-red-500"><a routerLink="/login">Login</a></span></p>
     </form>
 </div>

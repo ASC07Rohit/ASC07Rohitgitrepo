@@ -1,12 +1,18 @@
-<div class="flex justify-center my-20 overflow-x-auto">
+<div class="flex flex-col justify-center items-center py-10">
+
+    <div class="mb-10 flex justify-center items-center border rounded-md border-gray-800 p-1.5">
+        <img src="../../../public/search-icon.png" alt="search icon" class="h-[16px] pr-2">
+        <input type="text" placeholder="search by name" [(ngModel)]="searchTerm" (input)="onSearch()"
+            class="focus:outline-none">
+    </div>
+
+
     <table class="bg-white">
         <thead class="text-[14px]">
             <tr>
                 <th class="border border-gray-600 p-2 bg-gray-300">Sr No</th>
                 <th class="border border-gray-600 p-2 bg-gray-300">Name</th>
-                <!-- <th class="border border-gray-600 p-2 bg-gray-300">Age</th> -->
                 <th class="border border-gray-600 p-2 bg-gray-300">Email Id</th>
-                <!-- <th class="border border-gray-600 p-2 bg-gray-300">Mobile No</th> -->
                 <th class="border border-gray-600 p-2 bg-gray-300">City</th>
                 <th class="border border-gray-600 p-2 bg-gray-300">State</th>
                 <th class="border border-gray-600 p-2 bg-gray-300">Password</th>
@@ -14,12 +20,10 @@
             </tr>
         </thead>
         <tbody class="text-[14px] text-gray-700">
-            <tr *ngFor="let user of data">
+            <tr *ngFor="let user of filteredData">
                 <td class="border border-gray-600 p-2">{{user.id}}</td>
                 <td class="border border-gray-600 p-2">{{user.name}}</td>
-                <!-- <td class="border border-gray-600 p-2">{{user.age}}</td> -->
                 <td class="border border-gray-600 p-2">{{user.email}}</td>
-                <!-- <td class="border border-gray-600 p-2">{{user.contactNo}}</td> -->
                 <td class="border border-gray-600 p-2">{{user.city}}</td>
                 <td class="border border-gray-600 p-2">{{user.state}}</td>
                 <td class="border border-gray-600 p-2">{{user.password}}</td>
