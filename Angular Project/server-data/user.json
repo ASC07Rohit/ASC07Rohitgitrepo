@@ -1,15 +1,6 @@
 {
   "users": [
     {
-      "id": "8097",
-      "name": "Bhargav Ascendion",
-      "city": "Bangalore",
-      "email": "bhargav@gmail.com",
-      "password": "123456",
-      "state": "Karnataka",
-      "address": "123343"
-    },
-    {
       "id": "6939",
       "name": "Ayush",
       "city": "pune",
