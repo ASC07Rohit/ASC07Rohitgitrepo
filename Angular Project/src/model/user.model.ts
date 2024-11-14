@@ -5,5 +5,5 @@ export class User {
   password: string = '';
   city: string = '';
   state: string = '';
-  address: string = ''; // Include other properties as required
+  address: string = '';
 }

@@ -1,0 +1,11 @@
+
+<div class="bg-slate-700 text-white p-4 text-[14px] font-serif">
+    <ul class="flex justify-center">
+        <li routerLink="/" class="ml-10 cursor-pointer">Home</li>
+        <li routerLink="/issues" class="ml-10 cursor-pointer">Dashboard</li>
+        <li routerLink="/add-issue" class="ml-10 cursor-pointer">Add issue</li>
+        <li *ngIf="!authService.isLoggedIn()" routerLink="/login" class="ml-10 cursor-pointer">login</li>
+        <li *ngIf="authService.isLoggedIn()" (click)="logout()" class="ml-10 cursor-pointer">Logout</li>
+    </ul>
+</div>
+<router-outlet></router-outlet>

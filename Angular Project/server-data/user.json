@@ -1,21 +1,12 @@
 {
   "users": [
     {
-      "id": "6939",
-      "name": "Ayush",
-      "city": "pune",
-      "email": "ayush@gmail.com",
-      "password": "123456",
-      "state": "Maharashtra",
-      "address": "Bihar Patna"
-    },
-    {
       "id": "7127",
       "name": "Harsh Gade",
       "city": "Pune",
       "email": "yogesh@gmail.com",
       "password": "123456",
-      "state": "Bihar",
+      "state": "Maharashtra",
       "address": "asdasdad"
     },
     {
@@ -53,15 +44,6 @@
       "city": "Nagpur",
       "state": "Maharashtra",
       "address": "ngp maharashtra"
-    },
-    {
-      "id": "9a71",
-      "name": "Uday",
-      "email": "uday@gmail.com",
-      "password": "123456",
-      "city": "Pune",
-      "state": "Maharashtra",
-      "address": "pune maharashtra"
     }
   ]
 }
