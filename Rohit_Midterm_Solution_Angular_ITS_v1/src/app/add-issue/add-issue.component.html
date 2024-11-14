@@ -1,39 +1,43 @@
 
-<div class="flex justify-center items-center flex-col h-screen">
+<div class="flex justify-center items-center flex-col h-screen bg-add-img">
     <form [formGroup]="issueForm" (ngSubmit)="onSubmit()" class="border shadow-lg rounded-md p-8">
         <p style="font-weight: bold;" class="text-[20px] font-serif text-center mb-4">Add Issues here !!!</p>
         <div class="mt-6">
             <label class="text-[13px] font-semibold">Title</label><br>
-            <input type="text" formControlName="title" class="border p-1.5 mt-0.5 rounded-md border-gray-300">
+            <input type="text" formControlName="title" class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full">
         </div>
         
 
         <div class="mt-6">
             <label class="text-[13px] font-semibold">Description</label><br>
-            <input type="text" formControlName="description" class="border p-1.5 mt-0.5 rounded-md border-gray-300">
+            <input type="text" formControlName="description" class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full">
         </div>
         
 
-        <div class="mt-6">
-            <label class="text-[13px] font-semibold">Priority</label><br>
-            <select formControlName="priority" class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full">
-                <option>High</option>
-                <option>Low</option>
-            </select>
+        <div class="flex gap-4">
+            <div class="mt-6">
+                <label class="text-[13px] font-semibold">Priority</label><br>
+                <select formControlName="priority" class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full px-10">
+                    <option>High</option>
+                    <option>Low</option>
+                </select>
+            </div>
+    
+    
+            
+            <div class="mt-6">
+                <label class="text-[13px] font-semibold">Date</label><br>
+                <input type="date" formControlName="date" class="border p-1 mt-0.5 rounded-md border-gray-300">
+            </div>
+    
         </div>
-        
 
         <div class="mt-6">
             <label class="text-[13px] font-semibold">Assigned</label><br>
-            <input type="text" formControlName="assigned" class="border p-1.5 mt-0.5 rounded-md border-gray-300">
-        </div>
-
-        <div class="mt-6">
-            <label class="text-[13px] font-semibold">Date</label><br>
-            <input type="date" formControlName="date" class="border p-1.5 mt-0.5 rounded-md border-gray-300">
+            <input type="text" formControlName="assigned" class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full">
         </div>
         
 
-        <button class="mt-6 bg-green-500 p-1.5 text-[13px]  text-white w-full rounded-lg" type="submit" [disabled]="!issueForm.valid">Add</button>
+        <button class="mt-6 bg-green-500 p-2 font-semibold font-serif text-[13px]  text-white w-full rounded-lg" type="submit" [disabled]="!issueForm.valid">Add</button>
     </form>
 </div>

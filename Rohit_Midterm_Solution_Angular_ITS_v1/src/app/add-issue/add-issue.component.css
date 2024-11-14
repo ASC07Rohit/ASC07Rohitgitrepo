@@ -1,0 +1,5 @@
+.bg-add-img{
+    background-image: url('../../../public/login-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
