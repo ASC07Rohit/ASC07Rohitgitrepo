@@ -1,20 +1,121 @@
 {
   "data": [
     {
-      "id": "3279",
+      "id": "3179",
       "title": "harsh",
       "description": "h",
       "priority": "High",
       "assigned": "rohit",
+      "status": "In Progress",
       "date": "2024-10-09"
     },
     {
-      "id": "1450",
-      "title": "Rohit",
-      "description": "selokar",
+      "id": "3180",
+      "title": "Login page bug.....",
+      "description": "Login page not responding to user input",
+      "priority": "Low",
+      "assigned": "anita",
+      "status": "In Progress",
+      "date": "2024-10-10"
+    },
+    {
+      "id": "3181",
+      "title": "API response time slow",
+      "description": "The API response time is over 5 seconds.",
       "priority": "High",
-      "assigned": "Gaurav",
-      "date": "2024-11-04"
+      "assigned": "suman",
+      "status": "Resolved",
+      "date": "2024-10-11"
+    },
+    {
+      "id": "3183",
+      "title": "Missing product image",
+      "description": "Product image missing on the product detail page",
+      "priority": "Low",
+      "assigned": "priya",
+      "status": "In Progress",
+      "date": "2024-10-13"
+    },
+    {
+      "id": "3184",
+      "title": "UI alignment issue",
+      "description": "UI misalignment on mobile view for checkout page",
+      "priority": "High",
+      "assigned": "vicky",
+      "status": "Resolved",
+      "date": "2024-10-14"
+    },
+    {
+      "id": "3185",
+      "title": "Broken link on homepage",
+      "description": "A link on the homepage is broken, leading to a 404 error.",
+      "priority": "High",
+      "assigned": "sarah",
+      "status": "In Progress",
+      "date": "2024-10-15"
+    },
+    {
+      "id": "3186",
+      "title": "Email notifications not sent",
+      "description": "Users are not receiving email notifications for password resets.",
+      "priority": "Critical",
+      "assigned": "rajesh",
+      "status": "Resolved",
+      "date": "2024-10-16"
+    },
+    {
+      "id": "3187",
+      "title": "Payment gateway failure",
+      "description": "Payment gateway is failing to process credit card transactions",
+      "priority": "Critical",
+      "assigned": "kiran",
+      "status": "In Progress",
+      "date": "2024-10-17"
+    },
+    {
+      "id": "3188",
+      "title": "Page load time high",
+      "description": "The homepage is taking longer than usual to load.",
+      "priority": "Medium",
+      "assigned": "neha",
+      "status": "Closed",
+      "date": "2024-10-18"
+    },
+    {
+      "id": "7dd6",
+      "title": "aA",
+      "description": "d",
+      "priority": "High",
+      "assigned": "q",
+      "status": "In Progress",
+      "date": "2024-11-13"
+    },
+    {
+      "id": "6cc3",
+      "title": "l",
+      "description": "l",
+      "priority": "High",
+      "assigned": "l",
+      "status": "Closed",
+      "date": "2024-11-05"
+    },
+    {
+      "id": "d10d",
+      "title": "m",
+      "description": "m",
+      "priority": "High",
+      "assigned": "mmmmm",
+      "status": "Closed",
+      "date": "2024-11-05"
+    },
+    {
+      "id": "894a",
+      "title": "p",
+      "description": "p",
+      "priority": "Low",
+      "assigned": "p",
+      "status": "In Progress",
+      "date": "2024-11-01"
     }
   ]
 }

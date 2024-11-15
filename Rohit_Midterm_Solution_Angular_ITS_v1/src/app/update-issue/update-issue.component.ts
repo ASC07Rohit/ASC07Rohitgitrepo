@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { dataService } from '../service/data.service';
 import { Data } from '../model/data.model';
 import { HttpErrorResponse } from '@angular/common/http';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-update-issue',
@@ -10,7 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./update-issue.component.css'],
 })
 export class UpdateIssueComponent implements OnInit {
-  issueId: number | undefined;  // Allow issueId to be undefined initially
+  issueId: number | undefined;
   issue: Data = new Data();
 
   constructor(
@@ -23,7 +25,7 @@ export class UpdateIssueComponent implements OnInit {
     // Extract issueId from route parameters
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.issueId = +id;  // Convert string to number
+      this.issueId = +id; // Convert string to number
     }
 
     if (this.issueId !== undefined) {
@@ -40,9 +42,7 @@ export class UpdateIssueComponent implements OnInit {
     }
   }
 
-  // Handle form submission
   onSubmit(): void {
-    // Ensure that issueId is a valid number before calling the update service
     if (this.issueId !== undefined) {
       this.updateIssue();
     } else {
@@ -51,12 +51,16 @@ export class UpdateIssueComponent implements OnInit {
   }
 
   updateIssue(): void {
-    // Ensure that issueId is a valid number before calling the update service
     if (this.issueId !== undefined) {
       this.dataService.updateData(this.issueId, this.issue).subscribe(
         () => {
-          alert('Issue updated successfully!');
-          this.router.navigate(['/issues']);  // Navigate to the dashboard after update
+          Swal.fire({
+            icon: 'success',
+            title: 'User registered successfully!',
+            showConfirmButton: false,
+            timer: 2000,
+          });
+          this.router.navigate(['/issues']);
         },
         (error: HttpErrorResponse) => {
           console.error('Error updating issue', error);
@@ -64,7 +68,6 @@ export class UpdateIssueComponent implements OnInit {
       );
     } else {
       console.error('No issue ID found to update');
-      // Optionally, show an error message to the user
     }
   }
 }

@@ -1,49 +1,44 @@
 <div class=" h-screen flex flex-col items-center bg-gray-200">
 
   <div class="mt-12 w-full max-w-xl p-4">
-    <label for="searchIssue" class="font-semibold text-lg text-gray-700">Search Issues</label>
-    <input 
-      type="text" 
-      id="searchIssue"
-      [(ngModel)]="searchIssue" 
-      (ngModelChange)="filterIssues()"  
-      placeholder="Search issue by title"
-      class="mt-2 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-    >
+    <label for="searchIssue" class="font-semibold text-[18px] font-serif">Search Issues</label>
+    <input type="text" id="searchIssue" [(ngModel)]="searchIssue" (ngModelChange)="filterIssues()"
+      placeholder="Search issue by Title/description/Priority/Assigned/Date/Status"
+      class="mt-2 w-full p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
   </div>
 
-  <div class="w-full max-w-4xl mt-8 p-6 bg-white shadow-lg rounded-lg">
+  <div class="w-ful mt-8 p-6 bg-white shadow-lg rounded-lg">
     <p class="text-center font-semibold text-xl text-gray-800 font-serif mb-8">List of Issues</p>
-    
-    <table class="w-full table-auto text-gray-800 text-[14px]">
-      <thead class="bg-gray-200">
+
+    <table class="w-full table-auto text-[13px]">
+      <thead class="bg-gray-200 font-semibold font-serif">
         <tr>
+          <th class="px-4 py-2 text-left">ID</th>
           <th class="px-4 py-2 text-left">Title</th>
           <th class="px-4 py-2 text-left">Description</th>
           <th class="px-4 py-2 text-left">Priority</th>
           <th class="px-4 py-2 text-left">Assigned</th>
+          <th class="px-4 py-2 text-left">Status</th>
           <th class="px-4 py-2 text-left">Date</th>
           <th class="px-4 py-2 text-left">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let d of filteredData" class="border-b">
+          <td class="px-4 py-2">{{ d.id }}</td>
           <td class="px-4 py-2">{{ d.title }}</td>
           <td class="px-4 py-2">{{ d.description }}</td>
           <td class="px-4 py-2">{{ d.priority }}</td>
           <td class="px-4 py-2">{{ d.assigned }}</td>
+          <td class="px-4 py-2">{{ d.status }}</td>
           <td class="px-4 py-2">{{ d.date }}</td>
           <td class="px-4 py-2">
-            <button 
-              *ngIf="d.id !== undefined" 
-              (click)="deleteData(d.id)" 
+            <button *ngIf="d.id !== undefined" (click)="deleteData(d.id)"
               class="text-red-500 hover:text-white hover:bg-red-500 border border-red-500 px-4 py-2 rounded-lg transition duration-200">
               Delete
             </button>
 
-            <button 
-            *ngIf="d.id!==undefined"
-            (click)="editData(d.id)"
+            <button *ngIf="d.id!==undefined" (click)="editData(d.id)"
               class="ml-6 text-red-500 hover:text-white hover:bg-red-500 border border-red-500 px-4 py-2 rounded-lg transition duration-200">
               Edit
             </button>

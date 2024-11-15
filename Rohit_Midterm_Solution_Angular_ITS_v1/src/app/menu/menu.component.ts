@@ -4,14 +4,12 @@ import { AuthGuardService } from '../service/auth-guard.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrl: './menu.component.css'
+  styleUrl: './menu.component.css',
 })
 export class MenuComponent {
+  constructor(protected authService: AuthGuardService) {}
 
-  constructor(protected authService: AuthGuardService){}
-
-  logout(){
+  logout() {
     this.authService.logout();
   }
-
 }

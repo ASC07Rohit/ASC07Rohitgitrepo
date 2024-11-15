@@ -1,6 +1,6 @@
-.bg-login-img{
-    background-image: url('../../../public/login-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.bg-login-img {
+  background-image: url("../../../public/login-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

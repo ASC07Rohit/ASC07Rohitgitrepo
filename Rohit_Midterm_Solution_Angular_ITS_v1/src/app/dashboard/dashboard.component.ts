@@ -32,8 +32,19 @@ export class DashboardComponent implements OnInit {
     if (!this.searchIssue) {
       this.filteredData = this.data;
     } else {
-      this.filteredData = this.data.filter((issue) =>
-        issue.title.toLowerCase().includes(this.searchIssue.toLowerCase())
+      this.filteredData = this.data.filter(
+        (issue) =>
+          issue.title.toLowerCase().includes(this.searchIssue.toLowerCase()) ||
+          issue.description
+            .toLowerCase()
+            .includes(this.searchIssue.toLowerCase()) ||
+          issue.priority
+            .toLowerCase()
+            .includes(this.searchIssue.toLowerCase()) ||
+          issue.assigned
+            .toLowerCase()
+            .includes(this.searchIssue.toLowerCase()) ||
+          issue.status.toLowerCase().includes(this.searchIssue.toLowerCase())
       );
     }
   }
@@ -43,7 +54,9 @@ export class DashboardComponent implements OnInit {
       this.dataService.deleteData(id).subscribe(
         () => {
           this.data = this.data.filter((issue) => issue.id !== id);
-          this.filteredData = this.filteredData.filter((issue) => issue.id !== id);
+          this.filteredData = this.filteredData.filter(
+            (issue) => issue.id !== id
+          );
           alert('Issue deleted successfully!');
         },
         (error: HttpErrorResponse) => {

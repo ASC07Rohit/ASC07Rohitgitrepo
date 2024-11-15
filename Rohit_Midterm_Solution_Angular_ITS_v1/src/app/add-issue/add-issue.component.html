@@ -1,43 +1,86 @@
-
 <div class="flex justify-center items-center flex-col h-screen bg-add-img">
     <form [formGroup]="issueForm" (ngSubmit)="onSubmit()" class="border shadow-lg rounded-md p-8">
         <p style="font-weight: bold;" class="text-[20px] font-serif text-center mb-4">Add Issues here !!!</p>
+
         <div class="mt-6">
             <label class="text-[13px] font-semibold">Title</label><br>
             <input type="text" formControlName="title" class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full">
         </div>
-        
+        <div *ngIf="issueForm.get('title')?.invalid && issueForm.get('title')?.touched" class="text-red-500 text-sm">
+            <p *ngIf="issueForm.get('title')?.errors?.['required']">Name is required</p>
+        </div>
+
 
         <div class="mt-6">
             <label class="text-[13px] font-semibold">Description</label><br>
-            <input type="text" formControlName="description" class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full">
+            <input type="text" formControlName="description"
+                class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full">
         </div>
-        
+        <div *ngIf="issueForm.get('description')?.invalid && issueForm.get('description')?.touched"
+            class="text-red-500 text-sm">
+            <p *ngIf="issueForm.get('description')?.errors?.['required']">Description is required</p>
+        </div>
+
 
         <div class="flex gap-4">
-            <div class="mt-6">
-                <label class="text-[13px] font-semibold">Priority</label><br>
-                <select formControlName="priority" class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full px-10">
-                    <option>High</option>
-                    <option>Low</option>
-                </select>
+            <div>
+                <div class="mt-6">
+                    <label class="text-[13px] font-semibold">Priority</label><br>
+                    <select formControlName="priority"
+                        class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full pr-10">
+                        <option value="">Select</option>
+                        <option>High</option>
+                        <option>Low</option>
+                    </select>
+                </div>
+                <div *ngIf="issueForm.get('priority')?.invalid && issueForm.get('priority')?.touched"
+                    class="text-red-500 text-sm">
+                    <p *ngIf="issueForm.get('priority')?.errors?.['required']">Priority is required</p>
+                </div>
             </div>
-    
-    
-            
-            <div class="mt-6">
-                <label class="text-[13px] font-semibold">Date</label><br>
-                <input type="date" formControlName="date" class="border p-1 mt-0.5 rounded-md border-gray-300">
+
+
+
+            <div>
+                <div class="mt-6">
+                    <label class="text-[13px] font-semibold">Date</label><br>
+                    <input type="date" formControlName="date" class="border p-1 mt-0.5 rounded-md border-gray-300">
+                </div>
+                <div *ngIf="issueForm.get('date')?.invalid && issueForm.get('date')?.touched"
+                    class="text-red-500 text-sm">
+                    <p *ngIf="issueForm.get('date')?.errors?.['required']">Date is required</p>
+                </div>
             </div>
-    
+
         </div>
 
         <div class="mt-6">
             <label class="text-[13px] font-semibold">Assigned</label><br>
             <input type="text" formControlName="assigned" class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full">
         </div>
-        
+        <div *ngIf="issueForm.get('assigned')?.invalid && issueForm.get('assigned')?.touched"
+            class="text-red-500 text-sm">
+            <p *ngIf="issueForm.get('assigned')?.errors?.['required']">Assigned is required</p>
+        </div>
 
-        <button class="mt-6 bg-green-500 p-2 font-semibold font-serif text-[13px]  text-white w-full rounded-lg" type="submit" [disabled]="!issueForm.valid">Add</button>
+
+        <div class="mt-6">
+            <label class="text-[13px] font-semibold">Status</label><br>
+            <select formControlName="status"
+                class="border p-1.5 mt-0.5 rounded-md border-gray-300 w-full pr-10">
+                <option value="">Select</option>
+                <option>In Progress</option>
+                <option>Resolved</option>
+                <option>Closed</option>
+            </select>
+        </div>
+        <div *ngIf="issueForm.get('assigned')?.invalid && issueForm.get('status')?.touched"
+        class="text-red-500 text-sm">
+        <p *ngIf="issueForm.get('status')?.errors?.['status']">Assigned is required</p>
+    </div>
+
+        <button class="mt-6 bg-green-500 p-2 font-semibold font-serif text-[13px]  text-white w-full rounded-lg"
+            type="submit" [disabled]="!issueForm.valid">Add</button>
     </form>
+
 </div>
