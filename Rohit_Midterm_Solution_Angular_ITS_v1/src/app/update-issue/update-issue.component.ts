@@ -5,7 +5,6 @@ import { Data } from '../model/data.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import Swal from 'sweetalert2';
 
-
 @Component({
   selector: 'app-update-issue',
   templateUrl: './update-issue.component.html',
@@ -56,7 +55,7 @@ export class UpdateIssueComponent implements OnInit {
         () => {
           Swal.fire({
             icon: 'success',
-            title: 'User registered successfully!',
+            title: 'Issue Updated!',
             showConfirmButton: false,
             timer: 2000,
           });

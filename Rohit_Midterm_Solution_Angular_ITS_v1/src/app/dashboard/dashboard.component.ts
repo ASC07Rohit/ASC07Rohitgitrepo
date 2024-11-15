@@ -3,6 +3,8 @@ import { Data } from '../model/data.model';
 import { dataService } from '../service/data.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -57,7 +59,12 @@ export class DashboardComponent implements OnInit {
           this.filteredData = this.filteredData.filter(
             (issue) => issue.id !== id
           );
-          alert('Issue deleted successfully!');
+          Swal.fire({
+            icon: 'success',
+            title: 'Issues Deleted successfully!',
+            showConfirmButton: false,
+            timer: 2000,
+          });
         },
         (error: HttpErrorResponse) => {
           console.error('Error deleting issue', error);
