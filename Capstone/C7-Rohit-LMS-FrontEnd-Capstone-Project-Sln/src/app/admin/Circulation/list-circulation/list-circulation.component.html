@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+
+
+
+<div class="flex flex-col justify-center items-center mt-20">
+
+    <div class="flex w-[900px] justify-around">
+
+        <div
+            class="flex items-center border focus-within:border-gray-900 text-[14px] focus-within:shadow-sm rounded-sm">
+            <img src="search-icon.png" alt="search" class="w-[15px] h-[15px] mx-1">
+            <input type="search" class=" rounded-md p-1.5 w-[400px] focus:outline-none"
+                placeholder="search by title . . . ." />
+            <button class="p-1.5 bg-orange-400 font-semibold text-white px-10 rounded-r-sm">search</button>
+        </div>
+
+        <div>
+            <button
+                class="border-2 p-1 border-purple-800 rounded-md text-[13px] font-semibold px-4 text-amber-700 hover:scale-105 duration-300"
+                (click)="navigateAddToCirculation()">Add Circulation</button>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto mt-6">
+        <table class="min-w-full table-auto border-collapse border border-gray-200 text-left font-sans">
+            <thead>
+                <tr class="bg-blue-100 text-[15px] font-semibold">
+                    <th class="px-6 py-2 border">Circulation ID</th>
+                    <th class="px-6 py-2 border">Member name</th>
+                    <th class="px-6 py-2 border">Catalogue Title</th>
+                    <th class="px-6 py-2 border">Borrowed Date</th>
+                    <th class="px-6 py-2 border">Return Date</th>
+                    <th class="px-6 py-2 border">Status</th>
+                    <th class="px-6 py-2 border">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let circulation of circulations" class="text-[14px] hover:bg-gray-200">
+                    <td class="px-6 py-2 border">{{circulation.id}}</td>
+                    <td class="px-6 py-2 border">{{getMemberName(circulation.memberId)}}</td>
+                    <td class="px-6 py-2 border">{{getCatalogueTitle(circulation.catalogueId)}}</td>
+                    <td class="px-6 py-2 border">{{circulation.borrowDate}}</td>
+                    <td class="px-6 py-2 border">{{circulation.returnDate ? circulation.returnDate : 'Not Returned'}}
+                    </td>
+                    <td class="border px-6 text-white text-[13px]">
+                        <button
+                            class="p-0.5 px-2 rounded-sm border font-semibold {{circulation.returnDate ? 'bg-green-500': 'bg-red-500'}}">
+                            {{circulation.returnDate ? 'Returned': 'Borrowed'}}
+
+                        </button>
+                    </td>
+
+                    <td class="px-6 py-2 border text-white">
+                        <button *ngIf="!circulation.returnDate && circulation.id"
+                            class="p-0.5 px-2 rounded-sm bg-green-500 font-semibold"
+                            (click)="returnCatalogue(circulation)">Return
+                        </button>
+                        <span *ngIf="circulation.returnDate" (click)="deleteCirculation(circulation.id)">
+                            <img src="delete.png" alt="delete icon" class="w-[20px] cursor-pointer">
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

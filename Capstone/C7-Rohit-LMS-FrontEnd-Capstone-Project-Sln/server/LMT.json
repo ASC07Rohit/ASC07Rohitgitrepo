@@ -1,0 +1,148 @@
+{
+  "catalogues": [
+    {
+      "id": "C6429",
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "genre": "Programming",
+      "isbn": "9780132350884",
+      "availability": "UnAvailable"
+    },
+    {
+      "id": "C3421",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Fiction",
+      "isbn": "9780060935467",
+      "availability": "Available"
+    },
+    {
+      "id": "C6721",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "isbn": "9780547928227",
+      "availability": "Available"
+    },
+    {
+      "id": "C3925",
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "genre": "Fiction",
+      "isbn": "9780062315007",
+      "availability": "UnAvailable"
+    },
+    {
+      "id": "C2816",
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "isbn": "9780618640157",
+      "availability": "Available"
+    },
+    {
+      "id": "C8993",
+      "title": "p",
+      "author": "p",
+      "genre": "Computer science",
+      "isbn": "90",
+      "availability": "UnAvailable"
+    },
+    {
+      "id": "C4587",
+      "title": "k",
+      "author": "k",
+      "genre": "Social Science",
+      "isbn": "90483y47",
+      "availability": "UnAvailable"
+    }
+  ],
+  "members": [
+    {
+      "id": "M2791",
+      "name": "Harsh Gade",
+      "contactNumber": "9322040923",
+      "email": "harsh.gade@example.com",
+      "memberShipType": "Inactive"
+    },
+    {
+      "id": "M3429",
+      "name": "John Doe",
+      "contactNumber": "9876543210",
+      "email": "john.doe@example.com",
+      "memberShipType": "Active"
+    },
+    {
+      "id": "M1104",
+      "name": "Jane Smith",
+      "contactNumber": "9876543211",
+      "email": "jane.smith@example.com",
+      "memberShipType": "Inactive"
+    },
+    {
+      "id": "M4351",
+      "name": "Nina Patel",
+      "contactNumber": "9823456789",
+      "email": "nina.patel@example.com",
+      "memberShipType": "Active"
+    },
+    {
+      "id": "M5298",
+      "name": "Ananya Deshmukh",
+      "contactNumber": "9876543298",
+      "email": "ananya.deshmukh@example.com",
+      "memberShipType": "Inactive"
+    },
+    {
+      "id": "M6001",
+      "name": "Vikas Kumar",
+      "contactNumber": "9323478965",
+      "email": "vikas.kumar@example.com",
+      "memberShipType": "Active"
+    },
+    {
+      "id": "M7385",
+      "name": "Preeti Sharma",
+      "contactNumber": "9321234567",
+      "email": "preeti.sharma@example.com",
+      "memberShipType": "Inactive"
+    },
+    {
+      "id": "M6826",
+      "name": "Yash",
+      "contactNumber": "9322040923",
+      "email": "yash@gmail.com",
+      "memberShipType": "Active"
+    }
+  ],
+  "circulations": [
+    {
+      "id": "f10e",
+      "memberId": "M5298",
+      "catalogueId": "C2816",
+      "borrowDate": "2025-01-02",
+      "returnDate": "2024-12-03"
+    },
+    {
+      "id": "d70c",
+      "memberId": "M4351",
+      "catalogueId": "C3421",
+      "borrowDate": "2024-12-27",
+      "returnDate": "2024-12-04"
+    },
+    {
+      "id": "1c0f",
+      "memberId": "11",
+      "catalogueId": "C2000",
+      "borrowDate": "2024-12-25",
+      "returnDate": "2024-12-04"
+    },
+    {
+      "id": "C5592",
+      "memberId": "C10003",
+      "catalogueId": "1",
+      "borrowDate": "2024-12-18",
+      "returnDate": null
+    }
+  ]
+}

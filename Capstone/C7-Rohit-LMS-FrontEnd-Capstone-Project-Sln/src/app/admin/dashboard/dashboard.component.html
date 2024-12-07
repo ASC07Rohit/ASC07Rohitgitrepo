@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+
+
+<div class="max-w-[1000px] mx-auto">
+
+    <p class="mt-16 text-[20px] font-sans font-semibold">Dashboard</p>
+<hr>
+    <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-20">
+
+
+        <div class="bg-yellow-500 text-white flex items-center justify-between p-4 rounded-md shadow-lg cursor-pointer hover:scale-110 hover:duration-200" (click)="getBook()">
+            <div>
+                <p class="text-[50px] font-semibold">{{totalCatalogues}}</p>
+                <p class="text-[14px] font-semibold mt-2">Total Books</p>
+            </div>
+            <img src="book.png" alt="book-icon" class="w-16">
+        </div>
+
+
+        <div class="bg-green-500 text-white flex items-center justify-between p-4 rounded-md shadow-lg cursor-pointer hover:scale-110 hover:duration-200" (click)="getMembers()">
+            <div>
+                <p class="text-[50px] font-semibold">{{totalMembers}}</p>
+                <p class="text-[14px] font-semibold mt-2">Total Members</p>
+            </div>
+            <img src="member.png" alt="book-icon" class="w-14">
+        </div>
+
+
+        <div class="bg-red-500 text-white flex items-center justify-between p-4 rounded-md shadow-lg cursor-pointer hover:scale-110 hover:duration-200" (click)="getCirculation()">
+            <div class="">
+                <p class="text-[50px] font-semibold">{{totalCirculations}}</p>
+                <p class="text-[14px] font-semibold mt-2">Total Circulation</p>
+            </div>
+            <img src="circulation.png" alt="book-icon" class="w-14">
+        </div>
+
+
+
+        <div class="bg-orange-500 text-white flex items-center justify-between p-4 rounded-md shadow-lg cursor-pointer hover:scale-110 hover:duration-200" (click)="getBorrowedBook()">
+            <div class="">
+                <p class="text-[50px] font-semibold">{{totalBorrowedBook}}</p>
+                <p class="text-[14px] font-semibold mt-2">Total Borrowed Book</p>
+            </div>
+            <img src="borrow.png" alt="book-icon" class="w-16">
+        </div>
+
+
+
+        <div class="bg-blue-400 text-white flex items-center justify-between p-4 rounded-md shadow-lg cursor-pointer hover:scale-110 hover:duration-200" (click)="getReturnedBook()">
+            <div class="">
+                <p class="text-[50px] font-semibold">{{totalReturnedBook}}</p>
+                <p class="text-[14px] font-semibold mt-2">Total Returned Book</p>
+            </div>
+            <img src="return.png" alt="book-icon" class="w-14">
+        </div>
+
+    </div>
+</div>

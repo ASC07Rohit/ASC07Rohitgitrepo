@@ -1,0 +1,72 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="flex h-screen p-4 flex-col justify-center items-center login-bg-img">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="border w-[500px] p-6 shadow-md bg-white">
+        <p class="bg-blue-200 p-2 text-[13px] font-semibold">ADMIN SIGNUP FORM</p>
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Full Name</label><br>
+            <input formControlName="fullName" type="text"
+                class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+        </div>
+        <div *ngIf="signupForm.get('fullName')?.touched && signupForm.get('fullName')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="signupForm.get('fullName')?.errors?.['required']">name is required</p>
+        </div>
+
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Mobile Numer</label><br>
+            <input formControlName="mobileNumber" type="text"
+                class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+        </div>
+        <div *ngIf="signupForm.get('mobileNumber')?.touched && signupForm.get('mobileNumber')?.invalid"
+            class="text-red-500 text-sm">
+            <p *ngIf="signupForm.get('mobileNumber')?.errors?.['required']">mobile number is required</p>
+            <p *ngIf="signupForm.get('mobileNumber')?.errors?.['minLength']">enter only 10 digit</p>
+        </div>
+
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Email Id</label><br>
+            <input formControlName="email" type="email"
+                class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+        </div>
+        <div *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="signupForm.get('email')?.errors?.['required']">email is required</p>
+            <p *ngIf="signupForm.get('email')?.errors?.['email']">enter valid email</p>
+        </div>
+
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Password</label><br>
+            <input formControlName="password" type="password"
+                class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+        </div>
+        <div *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="signupForm.get('password')?.errors?.['required']">password required</p>
+            <p *ngIf="signupForm.get('password')?.errors?.['minLength']">password must have 6 char</p>
+        </div>
+
+
+        <!-- <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Confirm Password</label><br>
+            <input formControlName="confirmPassword" type="password"
+                class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+        </div>
+        <div *ngIf="signupForm.get('confirmPassword')?.touched && signupForm.get('confirmPassword')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">confirm password required</p>
+            <p *ngIf="signupForm.get('confirmPassword')?.errors?.['minLength']">password must have 6 char</p>
+        </div> -->
+
+
+
+        <div class="mt-6">
+            <button type="submit" [disabled]="signupForm.invalid" [ngClass]="{
+                'bg-green-500 hover:bg-green-600': !signupForm.invalid,
+                'bg-green-300 cursor-not-allowed': signupForm.invalid
+            }" class="w-full text-[13px] font-semibold p-1.5 text-white focus:outline-none">SIGN UP</button>
+        </div>
+    </form>
+</div>

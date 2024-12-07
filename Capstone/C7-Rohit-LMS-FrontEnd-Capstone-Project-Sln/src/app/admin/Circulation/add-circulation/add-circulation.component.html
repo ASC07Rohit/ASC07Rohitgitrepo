@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+
+<p class="mt-6 font-semibold text-[18px] font-sans max-w-[1000px] mx-auto border-b p-2">ADD CIRCULATION</p>
+
+<div class="flex items-center justify-center mt-16">
+    <form [formGroup]="circulationForm" (ngSubmit)="onSubmit()" class="border p-2 shadow-md w-[400px]">
+        <div>
+            <p class="font-semibold text-[13px] bg-blue-300 p-1.5">ADD CIRCULATION</p>
+        </div>
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Select Member</label><br>
+            <select formControlName="memberId" id="memberId"
+                class="border p-1 w-full border-gray-200 mt-1 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+
+                <option *ngFor="let member of members" [value]="member.id">{{member.name}}</option>
+            </select>
+        </div>
+        <div *ngIf="circulationForm.get('memberId')?.touched && circulationForm.get('memberId')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="circulationForm.get('memberId')?.errors?.['required']">please select member</p>
+        </div>
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Select Catalogue</label><br>
+            <select formControlName="catalogueId" id="catalogueId"
+                class="border p-1 w-full border-gray-200 mt-1 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+
+                <option *ngFor="let catalogue of catalogues" [value]="catalogue.id">{{catalogue.title}}</option>
+            </select>
+        </div>
+        <div *ngIf="circulationForm.get('catalogueId')?.touched && circulationForm.get('catalogueId')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="circulationForm.get('catalogueId')?.errors?.['required']">please select catalogue</p>
+        </div>
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Borrow Date</label><br>
+            <input type="date" formControlName="borrowDate"
+                class="border p-1 w-full border-gray-200 mt-1 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+        </div>
+        <div *ngIf="circulationForm.get('borrowDate')?.touched && circulationForm.get('borrowDate')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="circulationForm.get('borrowDate')?.errors?.['required']">please enter borrow date</p>
+        </div>
+
+
+        <div class="mt-6">
+            <button type="submit" [disabled]="circulationForm.invalid" [ngClass]="{
+                'bg-green-500 hover:bg-green-600': !circulationForm.invalid,
+                'bg-green-300 cursor-not-allowed': circulationForm.invalid
+            }" class=" w-full text-[13px] font-semibold p-1.5 text-white">Submit</button>
+        </div>
+
+    </form>
+</div>

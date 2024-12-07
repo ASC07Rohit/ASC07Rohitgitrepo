@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<div class="flex flex-col items-center justify-center mt-20">
+
+    <div class="flex w-[900px] justify-around">
+        <div
+            class="flex items-center border focus-within:border-gray-900 text-[14px] focus-within:shadow-sm rounded-sm">
+            <img src="search-icon.png" alt="search" class="w-[15px] h-[15px] mx-1">
+            <input type="search" class=" rounded-md p-1.5 w-[400px] focus:outline-none"
+                placeholder="search by title . . . ." [(ngModel)]="searchInput" />
+            <button (click)="onSearch()"
+                class="p-1.5 bg-orange-400 font-semibold text-white px-10 rounded-r-sm">search</button>
+        </div>
+        <div>
+            <button class="border-2 p-1 border-purple-800 rounded-md text-[13px] font-semibold px-4 text-amber-700 hover:scale-105 duration-300"
+                (click)="navigateToAddCatalogue()">Add New Book</button>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto mt-8">
+        <table class="min-w-full table-auto border-collapse border border-gray-200 text-left font-sans">
+            <thead>
+                <tr class="text-[15px] bg-blue-100">
+                    <th class="px-6 py-2 border">ID</th>
+                    <th class="px-6 py-2 border">Title</th>
+                    <th class="px-6 py-2 border">Author Name</th>
+                    <th class="px-6 py-2 border">Genre</th>
+                    <th class="px-6 py-2 border">ISBN</th>
+                    <th class="px-6 py-2 border">Availability</th>
+                    <th class="px-6 py-2 border">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let catalogue of catalogues" class="text-[14px] hover:bg-gray-200">
+                    <td class="px-6 py-2 border">{{catalogue.id}}</td>
+                    <td class="px-6 py-2 border">{{catalogue.title}}</td>
+                    <td class="px-6 py-2 border">{{catalogue.author}}</td>
+                    <td class="px-6 py-2 border">{{catalogue.genre}}</td>
+                    <td class="px-6 py-2 border">{{catalogue.isbn}}</td>
+                    <td class="px-6 border text-[13px]">
+                        <button
+                            class=" p-0.5 px-1 rounded-sm {{catalogue.availability === 'Available' ? 'bg-green-500 text-white font-semibold' : 'bg-red-500 text-white font-semibold '}}">
+                            {{catalogue.availability}}
+
+                        </button>
+                    </td>
+
+                    <td class="px-6 py-2 border">
+
+                        <button>
+                            <img src="edit.png" alt="edit icon" class="w-[20px]"
+                                (click)="navigateToUpdate(catalogue.id)">
+                        </button>
+
+                        <button (click)="deleteCatalogue(catalogue.id)" class="pl-2">
+                            <img src="delete.png" alt="delete icon" class="w-[20px]">
+                        </button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

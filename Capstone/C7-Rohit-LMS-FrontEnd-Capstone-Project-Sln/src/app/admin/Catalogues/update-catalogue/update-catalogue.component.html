@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+
+<div class="flex h-screen justify-center items-center">
+    <form [formGroup]="updateCatalogueForm" (ngSubmit)="onSubmit()" class="border w-[400px] p-2 shadow-md">
+        <p class="font-semibold text-[13px] bg-blue-300 p-1.5">UPDATE CATALOGUES</p>
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Title</label><br>
+            <input formControlName="title" type="text"
+                class="border p-1 mt-0.5 w-full focus:outline-none focus:border-gray-600">
+        </div>
+        <div *ngIf="updateCatalogueForm.get('title')?.touched && updateCatalogueForm.get('title')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="updateCatalogueForm.get('title')?.errors?.['required']">title is required</p>
+        </div>
+
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Author Name</label><br>
+            <input formControlName="author" type="text"
+                class="border p-1 mt-0.5 w-full focus:outline-none focus:border-gray-600">
+        </div>
+        <div *ngIf="updateCatalogueForm.get('author')?.touched && updateCatalogueForm.get('author')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="updateCatalogueForm.get('author')?.errors?.['required']">author is required</p>
+        </div>
+
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Genre</label><br>
+            <select formControlName="genre" class="border p-1 mt-0.5 w-full focus:outline-none focus:border-gray-600">
+                <option value="">select</option>
+                <option>Computer science</option>
+                <option>Philosophy & psychology</option>
+                <option>Religion</option>
+                <option>Social Science</option>
+                <option>Technology</option>
+                <option>Arts & recreation</option>
+                <option>Business</option>
+                <option>Architecture</option>
+            </select>
+        </div>
+        <div *ngIf="updateCatalogueForm.get('genre')?.touched && updateCatalogueForm.get('genre')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="updateCatalogueForm.get('genre')?.errors?.['required']">genre is required</p>
+        </div>
+
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">ISBN</label><br>
+            <input formControlName="isbn" type="text"
+                class="border p-1 mt-0.5 w-full focus:outline-none focus:border-gray-600">
+        </div>
+        <div *ngIf="updateCatalogueForm.get('isbn')?.touched && updateCatalogueForm.get('isbn')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="updateCatalogueForm.get('isbn')?.errors?.['required']">ISBN number is required</p>
+        </div>
+
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Availability</label><br>
+            <select formControlName="availability"
+                class="border w-full mt-1 p-1 text-[14px] focus:outline-none focus:border-gray-600">
+                <option>Available</option>
+                <option>UnAvailable</option>
+            </select>
+        </div>
+        <div *ngIf="updateCatalogueForm.get('availability')?.touched && updateCatalogueForm.get('availability')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="updateCatalogueForm.get('availability')?.errors?.['required']">please select anyone</p>
+        </div>
+
+
+
+        <div class="mt-6">
+            <button type="submit" [ngClass]="{
+                'bg-green-500 hover:bg-green-600': !updateCatalogueForm.invalid,
+                'bg-green-300 cursor-not-allowed': updateCatalogueForm.invalid
+            }" class="w-full text-[13px] font-semibold p-1.5 text-white focus:outline-none">Update Catalogues</button>
+        </div>
+    </form>
+</div>

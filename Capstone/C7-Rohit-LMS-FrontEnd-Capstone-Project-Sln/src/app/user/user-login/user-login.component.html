@@ -1,0 +1,37 @@
+<div class="flex h-screen p-4 flex-col justify-center items-center login-bg-img">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="border w-[500px] p-6 shadow-md bg-white">
+        <p class="bg-blue-200 p-2 text-[13px] font-semibold">ADMIN LOGIN FORM</p>
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Email Id</label><br>
+            <input formControlName="email" type="email"
+                class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+        </div>
+        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+            class="text-red-600 text-sm mt-1">
+            <p *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</p>
+            <p *ngIf="loginForm.get('email')?.errors?.['email']">Enter valid email</p>
+        </div>
+
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Password</label><br>
+            <input formControlName="password" type="password"
+                class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+        </div>
+        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</p>
+            <p *ngIf="loginForm.get('password')?.errors?.['minLength']">Password must be at least 6 characters</p>
+            <p *ngIf="loginForm.get('password')?.errors?.['pattern']">password must contain uppercase, lowercase, digit, special character</p>
+        </div>
+
+
+        <div class="mt-6">
+            <button type="submit" [disabled]="loginForm.invalid" [ngClass]="{
+                'bg-green-500 hover:bg-green-600': !loginForm.invalid,
+                'bg-green-300 cursor-not-allowed': loginForm.invalid
+            }" class=" w-full text-[13px] font-semibold p-1.5 text-white">LOGIN</button>
+        </div>
+        <p class="text-red-500 text-sm mt-2 text-center">Don't have Account ? <span class="text-blue-500 cursor-pointer" (click)="navigateToUpdateForm()">sign up</span></p>
+    </form>
+</div>

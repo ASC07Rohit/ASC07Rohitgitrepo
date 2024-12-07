@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+
+<p class="mt-6 font-semibold text-[18px] font-sans max-w-[1000px] mx-auto border-b p-2">ADD MEMBERS</p>
+
+<div class="flex mt-16 p-4 flex-col justify-center items-center">
+    <form [formGroup]="memberShipForm" (ngSubmit)="onSubmit()" class="border w-[400px] p-2 shadow-md">
+        <p class="bg-blue-200 p-2 text-[13px] font-semibold">MEMBERSHIP FORM</p>
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Name</label><br>
+            <input formControlName="name" type="text"
+                class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+        </div>
+        <div *ngIf="memberShipForm.get('name')?.touched && memberShipForm.get('name')?.errors"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="memberShipForm.get('name')?.errors?.['required']">name is required</p>
+        </div>
+
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Contact Numer</label><br>
+            <input formControlName="contactNumber" type="text"
+                class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+        </div>
+        <div *ngIf="memberShipForm.get('contactNumber')?.touched && memberShipForm.get('contactNumber')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="memberShipForm.get('contactNumber')?.errors?.['required']">contact number is required</p>
+        </div>
+
+
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Email Id</label><br>
+            <input formControlName="email" type="email"
+                class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
+        </div>
+        <div *ngIf="memberShipForm.get('email')?.touched && memberShipForm.get('email')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="memberShipForm.get('email')?.errors?.['required']">email is required</p>
+            <p *ngIf="memberShipForm.get('email')?.errors?.['email']">enter valid email</p>
+        </div>
+
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Membership Type</label><br>
+            <select formControlName="memberShipType"
+                class="w-full border p-1 border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[13px] focus:shadow-sm">
+                <option value="">Select Type</option>
+                <option>Active</option>
+                <option>Inactive</option>
+            </select>
+        </div>
+        <div *ngIf="memberShipForm.get('memberShipType')?.touched && memberShipForm.get('memberShipType')?.invalid"
+            class="text-red-500 text-sm mt-1">
+            <p *ngIf="memberShipForm.get('memberShipType')?.errors?.['required']">membership type is required</p>
+        </div>
+
+
+
+        <div class="mt-6">
+            <button type="submit" [disabled]="memberShipForm.invalid" [ngClass]="{
+                'bg-green-500 hover:bg-green-600': !memberShipForm.invalid,
+                'bg-green-300 cursor-not-allowed': memberShipForm.invalid
+            }" class="w-full text-[13px] font-semibold p-1.5 text-white focus:outline-none">Add Member</button>
+        </div>
+    </form>
+</div>
