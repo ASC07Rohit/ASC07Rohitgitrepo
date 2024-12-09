@@ -11,20 +11,28 @@ import { AddCirculationComponent } from './admin/Circulation/add-circulation/add
 import { ListCirculationComponent } from './admin/Circulation/list-circulation/list-circulation.component';
 import { HomeComponent } from './home/home.component';
 import { UpdateCatalogueComponent } from './admin/Catalogues/update-catalogue/update-catalogue.component';
+import { AdminListComponent } from './admin/admin-list/admin-list.component';
+import { AuthGuardService } from './shared/service/auth-guard.service';
+import { ListReviewComponent } from './admin/Review/list-review/list-review.component';
+import { AddReviewComponent } from './admin/Review/add-review/add-review.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate:[AuthGuardService] },
   { path: '', component: UserLoginComponent },
   { path: 'user-login', component: UserLoginComponent },
-  { path: 'user-signup', component: UserSignupComponent },
-  { path: 'catalogues/list-catalogues', component: ListCatalogueComponent },
-  { path: 'catalogues/add-catalogue', component: AddCatalogueComponent },
-  { path: 'catalogues/update/:id', component: UpdateCatalogueComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'members/list-members', component: ListMemberComponent },
-  { path: 'members/add-member', component: AddMemberComponent },
-  { path: 'circulation/list-circulation', component: ListCirculationComponent },
-  { path: 'circulation/add-circulation', component: AddCirculationComponent },
+  { path: 'user-signup', component: UserSignupComponent},
+  { path: 'catalogues/list-catalogues', component: ListCatalogueComponent, canActivate:[AuthGuardService] },
+  { path: 'catalogues/add-catalogue', component: AddCatalogueComponent, canActivate:[AuthGuardService] },
+  { path: 'catalogues/update/:id', component: UpdateCatalogueComponent, canActivate:[AuthGuardService] },
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuardService] },
+  { path: 'members/list-members', component: ListMemberComponent, canActivate:[AuthGuardService] },
+  { path: 'members/add-member', component: AddMemberComponent, canActivate:[AuthGuardService] },
+  { path: 'circulation/list-circulation', component: ListCirculationComponent, canActivate:[AuthGuardService] },
+  { path: 'circulation/add-circulation', component: AddCirculationComponent,canActivate: [AuthGuardService] },
+  { path: 'admin-list', component:AdminListComponent, canActivate:[AuthGuardService]},
+  { path: 'review', component:ListReviewComponent, canActivate:[AuthGuardService]},
+   {path:'add-review', component: AddReviewComponent, canActivate:[AuthGuardService]}
+
 ];
 
 @NgModule({

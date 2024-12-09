@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AdminService } from '../../shared/service/admin.service';
 
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrl: './user-login.component.css',
 })
-export class UserLoginComponent {
+export class UserLoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private adminService: AdminService
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: [
@@ -25,48 +31,35 @@ export class UserLoginComponent {
       ],
     });
   }
+  
+  ngOnInit(): void {}
 
-  onSubmit() {
+  onSubmit():void {
+    
     if (this.loginForm.valid) {
+    
       const email = this.loginForm.value.email;
       const password = this.loginForm.value.password;
 
-      const mockCredentials = {
-        email: 'admin@gmail.com',
-        password: 'Admin@123',
-      };
-
-      if (
-        email === mockCredentials.email &&
-        password === mockCredentials.password
-      ) {
-        // sessionStorage.setItem('isLoggedIn', 'true');
-        // sessionStorage.setItem('AdminEmail', email);
-        alert('Login successful');
-        this.loginForm.reset();
-        this.router.navigate(['/home']);
-
-      } else {
-        alert('Invalid credential please try again');
-      }
+      this.adminService.getAdminData().subscribe((data) => {
+        const user = data.find(
+          (u) => u.email === email && u.password === password
+        );
+        if(user){
+          sessionStorage.setItem('authStatus','true');
+          alert('Successfully login');
+          this.router.navigate(['/home']);
+          }
+          else{
+            alert('Invalid login credential');
+          }
+      });
     } else {
       console.log('Invalid Form');
     }
   }
 
-  isLoggedIn():boolean{
-    return sessionStorage.getItem('isLoggedIn') === 'true';
-  }
-
-  logout(){
-    sessionStorage.clear();
-    alert('Logged out successfully');
-  }
-
-  navigateToUpdateForm(){
-    console.log("Click 1");
+  navigateToUpdateForm() {
     this.router.navigate(['/user-signup']);
-    console.log("Click 2");
   }
-
 }

@@ -24,7 +24,6 @@ public class CatalogueController {
         return catalogueService.getAllCatalogues();
     }
 
-    // Endpoint to add a new catalogue
     @PostMapping
     public CatalogueEntity addCatalogue(@RequestBody CatalogueEntity catalogueEntity) {
         return catalogueService.addCatalogue(catalogueEntity);

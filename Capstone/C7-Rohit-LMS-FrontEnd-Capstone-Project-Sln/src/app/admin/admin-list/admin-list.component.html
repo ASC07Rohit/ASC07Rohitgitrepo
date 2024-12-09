@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<!-- Search Input -->
+<div class="flex flex-col justify-center items-center mt-20">
+    <div class="flex items-center border focus-within:border-gray-900 text-[14px] focus-within:shadow-sm rounded-sm">
+        <img src="search-icon.png" alt="search" class="w-[15px] h-[15px] mx-1">
+        <input type="search" class=" rounded-md p-1.5 w-[400px] focus:outline-none"
+            placeholder="search by title . . . ." />
+        <button class="p-1.5 bg-orange-400 font-semibold text-white px-10 rounded-r-sm">search</button>
+    </div>
+
+    <div class="overflow-x-auto mt-6">
+        <table class="min-w-full table-auto border-collapse border border-gray-200 text-left font-sans">
+            <thead>
+                <tr class="bg-blue-100 text-[14px] font-semibold border">
+                    <th class="px-6 py-2 border">ID</th>
+                    <th class="px-6 py-2 border">Admin Name</th>
+                    <th class="px-6 py-2 border">Mobile No.</th>
+                    <th class="px-6 py-2 border">Email</th>
+                    <th class="px-6 py-2 border">Password</th>
+                    <th class="px-6 py-2 border">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let admin of admins" class="text-[13px] hover:bg-gray-50">
+                    <td class="px-6 py-2 border">{{ admin.id }}</td>
+                    <td class="px-6 py-2 border">{{ admin.fullName }}</td>
+                    <td class="px-6 py-2 border">{{ admin.mobileNumber }}</td>
+                    <td class="px-6 py-2 border">{{ admin.email }}</td>
+                    <td class="px-6 py-2 border">{{ admin.password }}</td>
+                    <td class="px-6 py-2 border">
+                        <button (click)="deleteAdmin(admin.id)">
+                            <img src="delete.png" alt="delete icon" class="w-[20px] cursor-pointer">
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

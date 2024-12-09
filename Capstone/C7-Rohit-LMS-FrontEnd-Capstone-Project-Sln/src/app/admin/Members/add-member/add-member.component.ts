@@ -28,11 +28,24 @@ export class AddMemberComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  generateUniqueId(memberName: string): string {
+    const lastCounter =
+      Number(localStorage.getItem(`${memberName}IdCounter`)) || 1;
+    const uniqueNumber = lastCounter.toString().padStart(4, '0');
+    const id = `${memberName.charAt(0).toUpperCase()}${uniqueNumber}`;
+    localStorage.setItem(
+      `${memberName}IdCounter`,
+      (lastCounter + 1).toString()
+    );
+
+    return id;
+  }
+
   onSubmit(): void {
     if (this.memberShipForm.valid) {
       const newMember = {
+        id: this.generateUniqueId('member'),
         ...this.memberShipForm.value,
-        id: `M${Math.floor(1000 + Math.random() * 9000)}`,
       } as Member;
 
       this.memberService.addMember(newMember).subscribe((member) => {

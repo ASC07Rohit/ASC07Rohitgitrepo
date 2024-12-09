@@ -44,8 +44,9 @@
         </div>
         <div *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid"
             class="text-red-500 text-sm mt-1">
-            <p *ngIf="signupForm.get('password')?.errors?.['required']">password required</p>
-            <p *ngIf="signupForm.get('password')?.errors?.['minLength']">password must have 6 char</p>
+            <p *ngIf="signupForm.get('password')?.errors?.['required']">Password is required</p>
+            <p *ngIf="signupForm.get('password')?.errors?.['minLength']">Password must be at least 6 characters</p>
+            <p *ngIf="signupForm.get('password')?.errors?.['pattern']">password must contain uppercase, lowercase, digit, special character</p>
         </div>
 
 

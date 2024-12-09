@@ -46,17 +46,26 @@ export class AddCirculationComponent implements OnInit {
 
   onSubmit(): void {
     if (this.circulationForm.valid) {
-      
-      const newCirculation: Circulation = {
-        id: `C${Math.floor(1000 + Math.random() * 9000)}`,
+      const newCirculation = {
         ...this.circulationForm.value,
-        returnDate: null,
+        id: this.generateUniqueId()
       };
-  
-      
+
       this.circulationService.addCirculation(newCirculation).subscribe(() => {
+        alert("New Circulation Added Successfully");
         this.router.navigate(['/circulation/list-circulation']);
       });
     }
   }
+
+  generateUniqueId(): string {
+    const lastCounter = Number(localStorage.getItem('currentMatchIdCounter')) || 1;
+    const uniqueNumber = lastCounter.toString().padStart(4, '0');
+    const id = `C${uniqueNumber}`;
+    localStorage.setItem('currentMatchIdCounter', (lastCounter + 1).toString());
+  
+    return id;
+  }
+  
+  
 }

@@ -29,10 +29,20 @@ export class AddCatalogueComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  generateUniqueId(tableName: string): string {
+    
+    const lastCounter = Number(localStorage.getItem(`${tableName}IdCounter`)) || 1;
+    const uniqueNumber = lastCounter.toString().padStart(4, '0');
+    const id = `${tableName.charAt(0).toUpperCase()}${uniqueNumber}`;
+    localStorage.setItem(`${tableName}IdCounter`, (lastCounter + 1).toString());
+
+    return id;
+  }
+
   onSubmit(): void {
     if (this.catalogueForm.valid) {
       const newCatalogue: Catalogue = {
-        id: `C${Math.floor(1000 + Math.random() * 9000)}`,
+        id:this.generateUniqueId('catalogue'),
         ...this.catalogueForm.value,
       };
 
@@ -48,4 +58,5 @@ export class AddCatalogueComponent implements OnInit {
       console.log('Form is invalid');
     }
   }
+  
 }

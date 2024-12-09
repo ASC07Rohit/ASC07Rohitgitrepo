@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CatalogueService } from '../../../shared/service/catalogue.service';
 import { Catalogue } from '../../../shared/model/catalogue.model';
@@ -8,7 +8,7 @@ import { Catalogue } from '../../../shared/model/catalogue.model';
   templateUrl: './list-catalogue.component.html',
   styleUrl: './list-catalogue.component.css',
 })
-export class ListCatalogueComponent {
+export class ListCatalogueComponent implements OnInit{
   catalogues: Catalogue[] = [];
   //searchTitle: string = ' ';
   searchInput: string = '';

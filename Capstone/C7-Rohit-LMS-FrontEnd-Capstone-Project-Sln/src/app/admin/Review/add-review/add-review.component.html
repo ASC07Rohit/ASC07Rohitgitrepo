@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+
+<p class="mt-6 font-semibold text-[18px] font-sans max-w-[1000px] mx-auto border-b p-2">ADD REVIEW</p>
+
+
+<div class="flex items-center justify-center mt-16">
+    <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()" class="border p-2 shadow-md w-[400px]">
+        
+        <div>
+            <p class="font-semibold text-[13px] bg-blue-300 p-1.5">ADD REVIEW</p>
+        </div> 
+        
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Full Name</label><br>
+            <input type="text" formControlName="fullName" class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm" />
+        </div>
+        <div class="mt-4">
+            <label class="font-semibold text-[13px] text-gray-700">Feedback</label><br>
+            <textarea formControlName="feedback" class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm"></textarea>
+        </div>
+        <div class="mt-6">
+            <button [disabled]="reviewForm.invalid" type="submit" class="border" [ngClass]="{
+                'bg-green-500 hover:bg-green-600': !reviewForm.invalid,
+                'bg-green-300 cursor-not-allowed': reviewForm.invalid
+            }" class=" w-full text-[13px] font-semibold p-1.5 text-white">Submit</button>
+        </div>
+    </form>
+</div>

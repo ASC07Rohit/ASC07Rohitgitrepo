@@ -17,6 +17,10 @@ import { ListCirculationComponent } from './admin/Circulation/list-circulation/l
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { UpdateCatalogueComponent } from './admin/Catalogues/update-catalogue/update-catalogue.component';
+import { AdminListComponent } from './admin/admin-list/admin-list.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AddReviewComponent } from './admin/Review/add-review/add-review.component';
+import { ListReviewComponent } from './admin/Review/list-review/list-review.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,9 @@ import { UpdateCatalogueComponent } from './admin/Catalogues/update-catalogue/up
     HomeComponent,
     DashboardComponent,
     UpdateCatalogueComponent,
+    AdminListComponent,
+    AddReviewComponent,
+    ListReviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,8 +47,9 @@ import { UpdateCatalogueComponent } from './admin/Catalogues/update-catalogue/up
     ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   bootstrap: [AppComponent],
+  providers: [provideAnimationsAsync()],
 })
 export class AppModule {}

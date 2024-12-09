@@ -11,6 +11,7 @@ export class NavbarComponent {
   constructor(private router: Router){}
 
   logout():void{
+    sessionStorage.removeItem('authStatus');
     this.router.navigate(['/user-login']);
   }
   
