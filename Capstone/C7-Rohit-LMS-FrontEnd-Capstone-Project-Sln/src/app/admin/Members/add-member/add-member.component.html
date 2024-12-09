@@ -6,13 +6,13 @@
     <form [formGroup]="memberShipForm" (ngSubmit)="onSubmit()" class="border w-[400px] p-2 shadow-md">
         <p class="bg-blue-200 p-2 text-[13px] font-semibold">MEMBERSHIP FORM </p>
         <div class="mt-4">
-            <label class="font-semibold text-[13px] text-gray-700">Name</label><br>
+            <label class="font-semibold text-[13px] text-gray-700">Name </label><br>
             <input formControlName="name" type="text"
                 class="border p-1 w-full border-gray-200 mt-0.5 focus:outline-none focus:border-gray-600 text-[14px] focus:shadow-sm">
         </div>
         <div *ngIf="memberShipForm.get('name')?.touched && memberShipForm.get('name')?.errors"
             class="text-red-500 text-sm mt-1">
-            <p *ngIf="memberShipForm.get('name')?.errors?.['required']">name is required</p>
+            <p *ngIf="memberShipForm.get('name')?.errors?.['required']">name is required   </p>
         </div>
 
 
