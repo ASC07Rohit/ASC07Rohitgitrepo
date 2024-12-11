@@ -73,7 +73,7 @@ export class UpdateCatalogueComponent implements OnInit {
       .subscribe({
         next: () => {
           this.isLoading = false;
-          alert('Catalogue Updated Successfully');
+          // alert('Catalogue Updated Successfully');
           this.router.navigate(['/catalogues/list-catalogues']);
         },
         error: () => {

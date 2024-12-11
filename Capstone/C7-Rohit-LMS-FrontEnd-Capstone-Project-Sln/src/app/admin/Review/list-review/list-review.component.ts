@@ -32,12 +32,12 @@ export class ListReviewComponent implements OnInit {
   }
 
   deleteReview(id: string) {
-    const confirmation = confirm('Are you sure want to Delete the Review ?');
-    if (confirmation) {
-      this.reviewService.deletReview(id).subscribe(() => {
-        this.loadReviews();
-        alert('Review Deleted Successfully');
-      });
-    }
+    // const confirmation = confirm('Are you sure want to Delete the Review ?');
+    // if (confirmation) {
+    this.reviewService.deletReview(id).subscribe(() => {
+      this.loadReviews();
+      // alert('Review Deleted Successfully');
+    });
   }
 }
+// }

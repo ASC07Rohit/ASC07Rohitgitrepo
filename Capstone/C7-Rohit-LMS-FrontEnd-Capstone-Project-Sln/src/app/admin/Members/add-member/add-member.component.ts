@@ -52,7 +52,7 @@ export class AddMemberComponent implements OnInit {
         this.members.push(member);
         console.log('Member data: ', this.memberShipForm.value);
         this.memberShipForm.reset();
-        alert('done');
+        // alert('done');
         this.router.navigate(['/members/list-members']);
       });
     } else {

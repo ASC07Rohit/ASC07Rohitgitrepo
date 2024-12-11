@@ -33,7 +33,7 @@ export class ListMemberComponent implements OnInit {
     if (confirmation) {
       this.memberService.deleteMember(id).subscribe(() => {
         this.loadMembers();
-        alert('Member Deleted Successfully');
+        // alert('Member Deleted Successfully');
       });
     }
   }

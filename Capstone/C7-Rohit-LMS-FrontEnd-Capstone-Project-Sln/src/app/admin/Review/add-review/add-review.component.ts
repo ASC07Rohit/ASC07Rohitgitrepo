@@ -45,7 +45,7 @@ export class AddReviewComponent implements OnInit {
       };
 
       this.reviewService.addReview(formData).subscribe(() => {
-        alert('Review submitted successfully');
+        // alert('Review submitted successfully');
         this.reviewForm.reset();
         this.router.navigate(['/review']);
       });

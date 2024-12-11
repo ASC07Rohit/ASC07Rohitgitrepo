@@ -51,7 +51,7 @@ export class AddCatalogueComponent implements OnInit {
         .subscribe((catalogue) => {
           console.log('Catalogue data: ', this.catalogueForm.value);
           this.catalogueForm.reset();
-          alert('Catalogue added Successfully');
+          // alert('Catalogue added Successfully');
           this.router.navigate(['/catalogues/list-catalogues']);
         });
     } else {

@@ -8,11 +8,11 @@ import { Catalogue } from '../../../shared/model/catalogue.model';
   templateUrl: './list-catalogue.component.html',
   styleUrl: './list-catalogue.component.css',
 })
-export class ListCatalogueComponent implements OnInit{
+export class ListCatalogueComponent implements OnInit {
   catalogues: Catalogue[] = [];
   //searchTitle: string = ' ';
   searchInput: string = '';
-  searchPerformed= false;
+  searchPerformed = false;
 
   constructor(
     private router: Router,
@@ -34,15 +34,15 @@ export class ListCatalogueComponent implements OnInit{
   }
 
   deleteCatalogue(id: string): void {
-    const confirmation = confirm(
-      'Are you sure you want to delete this catalogue ?'
-    );
-    if (confirmation) {
-      this.catalogueService.deleteCatalogue(id).subscribe(() => {
-        this.loadCatalogues();
-        alert('Catalogue Deleted Successfully');
-      });
-    }
+    // const confirmation = confirm(
+    //   'Are you sure you want to delete this catalogue ?'
+    // );
+    // if (confirmation) {
+    this.catalogueService.deleteCatalogue(id).subscribe(() => {
+      this.loadCatalogues();
+      // alert('Catalogue Deleted Successfully');
+    });
+    // }
   }
 
   navigateToUpdate(id: string): void {
@@ -55,7 +55,7 @@ export class ListCatalogueComponent implements OnInit{
 
     this.catalogueService.searchCatalogueByTitle(this.searchInput).subscribe(
       (data) => {
-        console.log(">>", data)
+        console.log('>>', data);
         this.catalogues = data;
         this.searchPerformed = true;
       },
@@ -64,7 +64,5 @@ export class ListCatalogueComponent implements OnInit{
         this.searchPerformed = true;
       }
     );
-
-    
   }
 }

@@ -40,6 +40,6 @@ export class CatalogueService {
     return this.http.get(
       `${this.apiUrl}/search?title=${title.trim()}`
     );
-    // return this.http.get(`${this.apiUrl}/search`, { params: { title } });
+    
   }
 }

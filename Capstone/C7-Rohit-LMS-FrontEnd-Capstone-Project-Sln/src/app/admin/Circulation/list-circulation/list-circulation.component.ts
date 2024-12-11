@@ -61,7 +61,7 @@ export class ListCirculationComponent implements OnInit {
   returnCatalogue(circulation: Circulation): void {
     if (circulation.id !== undefined) {
       const returnDate = new Date().toISOString().split('T')[0];
-      circulation.borrowDate = returnDate;
+      circulation.returnDate = returnDate;
       this.circulationService.returnBook(circulation).subscribe(() => {
         this.loadCirculations();
       });
@@ -73,16 +73,16 @@ export class ListCirculationComponent implements OnInit {
   }
 
   deleteCirculation(id: string): void {
-    const confirmation = confirm(
-      'Are you sure want to delete the circulation ? '
-    );
+    // const confirmation = confirm(
+    //   'Are you sure want to delete the circulation ? '
+    // );
 
-    if (confirmation) {
-      this.circulationService.deleteCirculation(id).subscribe(() => {
-        this.loadCirculations();
+    // if (confirmation) {
+    this.circulationService.deleteCirculation(id).subscribe(() => {
+      this.loadCirculations();
 
-        alert('Circulation Deleted Successfully');
-      });
-    }
+      // alert('Circulation Deleted Successfully');
+    });
+    // }
   }
 }

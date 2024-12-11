@@ -52,7 +52,7 @@ export class AddCirculationComponent implements OnInit {
       };
 
       this.circulationService.addCirculation(newCirculation).subscribe(() => {
-        alert("New Circulation Added Successfully");
+        // alert("New Circulation Added Successfully");
         this.router.navigate(['/circulation/list-circulation']);
       });
     }
